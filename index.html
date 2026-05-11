@@ -31244,31 +31244,6 @@ Un abrazo, equipo Nu. 💜</div>
                         </div>
                     </div>
                 </div>
-                <!-- Filters Toolbar (visible for ALL bills) -->
-                <div id="billDetailPurchaseToolbar" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 12px 0; border-top: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8; margin: 8px 0 4px;">
-                    <div style="display: flex; align-items: center; gap: 14px;">
-                        <button type="button" id="billsMoreFiltersBtn" onclick="openBillsFilterByModal()" style="display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #ccc; padding: 7px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; color: #1F1F1F; cursor: pointer;">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                <line x1="3" y1="7" x2="11" y2="7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                                <line x1="17" y1="7" x2="21" y2="7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                                <line x1="3" y1="17" x2="7" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                                <line x1="13" y1="17" x2="21" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                                <circle cx="14" cy="7" r="2.4" stroke="currentColor" stroke-width="1.8" fill="#fff"/>
-                                <circle cx="10" cy="17" r="2.4" stroke="currentColor" stroke-width="1.8" fill="#fff"/>
-                            </svg>
-                            <span>More filters</span>
-                            <span id="billsMoreFiltersCount" style="display: none; background: #7C4DBC; color: #fff; border-radius: 10px; padding: 1px 7px; font-size: 11px; font-weight: 700; min-width: 18px; text-align: center;">0</span>
-                        </button>
-                        <button type="button" id="billsClearFiltersBtn" onclick="clearBillsFilters()" style="background: none; border: none; font-size: 13px; color: #1F1F1F; cursor: pointer; padding: 0;">Clear filters</button>
-                    </div>
-                    <button type="button" style="display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #ccc; padding: 7px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; color: #1F1F1F; cursor: pointer;">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/>
-                            <path d="M5 15H4.5C3.67 15 3 14.33 3 13.5v-9C3 3.67 3.67 3 4.5 3h9C14.33 3 15 3.67 15 4.5V5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                        </svg>
-                        <span>Copy purchases</span>
-                    </button>
-                </div>
                 
                 <!-- Row 2: Installments, Interests, Late Interests -->
                 <div class="bill-detail-row" id="billDetailRow2" style="display: none;">
@@ -31363,7 +31338,33 @@ Un abrazo, equipo Nu. 💜</div>
                         <span>Save Movements In CSV</span>
                     </button>
                 </div>
-                
+
+                <!-- Filters Toolbar (visible for ALL bills) -->
+                <div id="billDetailPurchaseToolbar" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 12px 0; border-top: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8; margin: 8px 0 4px;">
+                    <div style="display: flex; align-items: center; gap: 14px;">
+                        <button type="button" id="billsMoreFiltersBtn" onclick="openBillsFilterByModal()" style="display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #ccc; padding: 7px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; color: #1F1F1F; cursor: pointer;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <line x1="3" y1="7" x2="11" y2="7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="17" y1="7" x2="21" y2="7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="3" y1="17" x2="7" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="13" y1="17" x2="21" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                <circle cx="14" cy="7" r="2.4" stroke="currentColor" stroke-width="1.8" fill="#fff"/>
+                                <circle cx="10" cy="17" r="2.4" stroke="currentColor" stroke-width="1.8" fill="#fff"/>
+                            </svg>
+                            <span>More filters</span>
+                            <span id="billsMoreFiltersCount" style="display: none; background: #7C4DBC; color: #fff; border-radius: 10px; padding: 1px 7px; font-size: 11px; font-weight: 700; min-width: 18px; text-align: center;">0</span>
+                        </button>
+                        <button type="button" id="billsClearFiltersBtn" onclick="clearBillsFilters()" style="background: none; border: none; font-size: 13px; color: #1F1F1F; cursor: pointer; padding: 0;">Clear filters</button>
+                    </div>
+                    <button type="button" style="display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #ccc; padding: 7px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; color: #1F1F1F; cursor: pointer;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                            <path d="M5 15H4.5C3.67 15 3 14.33 3 13.5v-9C3 3.67 3.67 3 4.5 3h9C14.33 3 15 3.67 15 4.5V5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                        <span>Copy purchases</span>
+                    </button>
+                </div>
+
                 <!-- Transaction List -->
                 <div id="billDetailTransactions" style="padding: 6px 0; display: none;">
                 </div>
@@ -35246,6 +35247,7 @@ Un abrazo, equipo Nu. 💜</div>
             document.querySelectorAll('.card-menu-dropdown').forEach(function(m) {
                 m.classList.remove('active');
             });
+            addCardHistoryEntry(cardType, 'Available', 'available');
             showToast();
         }
 
@@ -35335,6 +35337,7 @@ Un abrazo, equipo Nu. 💜</div>
             if (menu) {
                 menu.innerHTML = buildBlockedCardMenuInnerHTML(currentBlockCardType);
             }
+            addCardHistoryEntry(currentBlockCardType, statusText, 'negative');
             closeBlockCardModal();
             showToast();
         }
@@ -35679,6 +35682,14 @@ Un abrazo, equipo Nu. 💜</div>
             });
         })();
 
+        var STATUS_ID_TO_CARD_TYPE = {
+            physicalDebitStatus: 'physicalDebit',
+            virtualDebitStatus: 'virtualDebit',
+            physicalCreditStatus: 'physicalCredit',
+            virtualCreditStatus: 'virtualCredit',
+            additionalCreditStatus: 'additionalCredit'
+        };
+
         function applyCancelAllCardsToTab(tabType) {
             var list = document.querySelector('#cardsWidget #cardsContent');
             if (!list) return;
@@ -35692,6 +35703,8 @@ Un abrazo, equipo Nu. 💜</div>
                     st.textContent = "Canceled - Customer doesn't want the card";
                     st.classList.remove('blocked');
                     st.classList.add('canceled');
+                    var cardType = STATUS_ID_TO_CARD_TYPE[st.id];
+                    if (cardType) addCardHistoryEntry(cardType, 'Disabled', 'negative');
                 });
                 section.querySelectorAll('.card-lock-icon').forEach(function(icon) {
                     icon.setAttribute('hidden', '');
@@ -35814,6 +35827,8 @@ Un abrazo, equipo Nu. 💜</div>
                 if (currentCardType === 'virtualCredit' || currentCardType === 'virtual') {
                     addVirtualCardCancelledNotificationHistory(new Date());
                 }
+
+                addCardHistoryEntry(currentCardType, 'Disabled', 'negative');
             }
         }
 
