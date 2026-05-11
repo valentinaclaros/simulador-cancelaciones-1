@@ -18101,6 +18101,2039 @@
             width: 13px;
             height: 13px;
         }
+
+        /* Person Information V2 — versión con tabs (Customer / Addresses / Devices) */
+        #personInfoV2Widget {
+            border-left: 2px solid #7C4DBC;
+            border-right: 2px solid #7C4DBC;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        #personInfoV2Widget .widget-header {
+            border-radius: 8px 8px 0 0;
+        }
+        #personInfoV2Widget.collapsed .widget-header {
+            border-radius: 8px;
+        }
+        #personInfoV2Widget .widget-title {
+            font-weight: 700;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #personInfoV2Widget .widget-content {
+            padding: 0 !important;
+            background: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #personInfoV2Widget .piv2-tabs {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 14px 18px 0;
+            border-bottom: 1px solid #ececec;
+        }
+        #personInfoV2Widget .piv2-tab {
+            background: none;
+            border: none;
+            padding: 4px 0 10px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #888;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            line-height: 1.2;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #personInfoV2Widget .piv2-tab.is-active {
+            color: #6A1B9A;
+            border-bottom-color: #6A1B9A;
+        }
+        #personInfoV2Widget .piv2-body {
+            padding: 14px 18px 18px;
+            max-height: 500px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #c8c0d6 transparent;
+        }
+        #personInfoV2Widget .piv2-body::-webkit-scrollbar {
+            width: 8px;
+        }
+        #personInfoV2Widget .piv2-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        #personInfoV2Widget .piv2-body::-webkit-scrollbar-thumb {
+            background-color: #c8c0d6;
+            border-radius: 4px;
+        }
+        #personInfoV2Widget .piv2-body::-webkit-scrollbar-thumb:hover {
+            background-color: #a99cc0;
+        }
+        #personInfoV2Widget .piv2-panel { display: none; }
+        #personInfoV2Widget .piv2-panel.is-active { display: block; }
+        #personInfoV2Widget .piv2-cust-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #ececec;
+        }
+        #personInfoV2Widget .piv2-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #7C4DBC;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            font-style: italic;
+            flex-shrink: 0;
+            letter-spacing: -0.02em;
+        }
+        #personInfoV2Widget .piv2-cust-head-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            min-width: 0;
+        }
+        #personInfoV2Widget .piv2-pref-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        #personInfoV2Widget .piv2-pref-value {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #1a1a1a;
+        }
+        #personInfoV2Widget .piv2-field {
+            padding: 12px 0;
+            border-bottom: 1px solid #ececec;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        #personInfoV2Widget .piv2-field:last-child {
+            border-bottom: none;
+        }
+        #personInfoV2Widget .piv2-field-label {
+            font-size: 12px;
+            font-weight: 400;
+            color: #888;
+        }
+        #personInfoV2Widget .piv2-field-value {
+            font-size: 14px;
+            font-weight: 400;
+            color: #1a1a1a;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            word-break: break-word;
+        }
+        #personInfoV2Widget .piv2-section-title {
+            font-size: 12px;
+            font-weight: 400;
+            color: #888;
+            padding: 14px 0 4px;
+            margin-top: 4px;
+        }
+        #personInfoV2Widget .piv2-addr-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        #personInfoV2Widget .piv2-addr-text {
+            font-size: 14px;
+            color: #1a1a1a;
+            line-height: 1.45;
+            white-space: pre-line;
+            flex: 1;
+            min-width: 0;
+            word-break: break-word;
+        }
+        #personInfoV2Widget .piv2-icon-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            color: #7C4DBC;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            flex-shrink: 0;
+        }
+        #personInfoV2Widget .piv2-icon-btn--muted {
+            color: #888;
+        }
+        #personInfoV2Widget .piv2-icon-btn:hover {
+            opacity: 0.8;
+        }
+        #personInfoV2Widget .piv2-check {
+            color: #888;
+            display: inline-flex;
+            align-items: center;
+        }
+        #personInfoV2Widget .piv2-warn {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 12px;
+            background: #FCE9D6;
+            border-radius: 4px;
+            color: #B25C12;
+            font-size: 13px;
+            margin: 12px 0 4px;
+        }
+        #personInfoV2Widget .piv2-warn svg { flex-shrink: 0; }
+        #personInfoV2Widget .piv2-other-toggle {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 14px;
+            margin: 12px 0 0;
+            background: #ededed;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #1a1a1a;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #personInfoV2Widget .piv2-other-toggle .piv2-chev {
+            transition: transform 0.2s;
+            color: #555;
+        }
+        #personInfoV2Widget .piv2-other-toggle.is-open .piv2-chev {
+            transform: rotate(90deg);
+        }
+        #personInfoV2Widget .piv2-other-list {
+            display: none;
+            padding: 0 14px;
+        }
+        #personInfoV2Widget .piv2-other-toggle.is-open + .piv2-other-list {
+            display: block;
+        }
+        #personInfoV2Widget .piv2-other-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #ececec;
+            font-size: 14px;
+            color: #1a1a1a;
+            word-break: break-word;
+            line-height: 1.45;
+        }
+        #personInfoV2Widget .piv2-other-item:last-child {
+            border-bottom: none;
+        }
+        #personInfoV2Widget .piv2-footer {
+            padding: 8px 14px;
+            background: #fff;
+            border-top: 1px solid #ececec;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            flex-wrap: nowrap;
+        }
+        #personInfoV2Widget .piv2-footer-left,
+        #personInfoV2Widget .piv2-footer-right {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        #personInfoV2Widget .piv2-foot-label {
+            font-size: 11px;
+            color: #555;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        /* Prospects Widget */
+        #prospectsWidget {
+            border-left: 2px solid #7C4DBC;
+            border-right: 2px solid #7C4DBC;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        #prospectsWidget .widget-header {
+            border-radius: 8px 8px 0 0;
+        }
+        #prospectsWidget.collapsed .widget-header {
+            border-radius: 8px;
+        }
+        #prospectsWidget .widget-title {
+            font-weight: 700;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #prospectsWidget .widget-content {
+            padding: 0 !important;
+            background: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #prospectsWidget .pros-filters {
+            display: flex;
+            gap: 8px;
+            padding: 10px 14px 8px;
+        }
+        #prospectsWidget .pros-filter {
+            flex: 1;
+            min-width: 0;
+            padding: 6px 24px 6px 10px;
+            border: 1px solid #d8d8d8;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #1a1a1a;
+            background-color: #fff;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath fill='%23555' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            appearance: none;
+            cursor: pointer;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.3;
+        }
+        #prospectsWidget .pros-list {
+            max-height: 480px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 0 18px;
+            border-top: 1px solid #ececec;
+            scrollbar-width: thin;
+            scrollbar-color: #c8c0d6 transparent;
+        }
+        #prospectsWidget .pros-list::-webkit-scrollbar { width: 8px; }
+        #prospectsWidget .pros-list::-webkit-scrollbar-track { background: transparent; }
+        #prospectsWidget .pros-list::-webkit-scrollbar-thumb {
+            background-color: #c8c0d6;
+            border-radius: 4px;
+        }
+        #prospectsWidget .pros-list::-webkit-scrollbar-thumb:hover {
+            background-color: #a99cc0;
+        }
+        #prospectsWidget .pros-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 0;
+            border-bottom: 1px solid #ececec;
+            cursor: pointer;
+        }
+        #prospectsWidget .pros-item:last-of-type {
+            border-bottom: none;
+        }
+        #prospectsWidget .pros-chev {
+            color: #7C4DBC;
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+        }
+        #prospectsWidget .pros-info {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        #prospectsWidget .pros-meta {
+            font-size: 13px;
+            font-weight: 400;
+            color: #888;
+            line-height: 1.3;
+        }
+        #prospectsWidget .pros-meta-sep {
+            margin: 0 6px;
+            color: #aaa;
+            letter-spacing: 1px;
+        }
+        #prospectsWidget .pros-email {
+            font-size: 14px;
+            font-weight: 400;
+            color: #1a1a1a;
+            word-break: break-word;
+            line-height: 1.3;
+        }
+        #prospectsWidget .pros-footer {
+            padding: 8px 14px;
+            background: #fff;
+            border-top: 1px solid #ececec;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            flex-wrap: nowrap;
+        }
+        #prospectsWidget .pros-footer-left,
+        #prospectsWidget .pros-footer-right {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        #prospectsWidget .pros-foot-label {
+            font-size: 11px;
+            color: #555;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+        #prospectsWidget .pros-icon-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #888;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+        }
+
+        /* ── Panel desplegable de cada Prospect ── */
+        #prospectsWidget .pros-row {
+            border-bottom: 1px solid #ececec;
+        }
+        #prospectsWidget .pros-row:last-child {
+            border-bottom: none;
+        }
+        #prospectsWidget .pros-row .pros-item {
+            border-bottom: none;
+        }
+        #prospectsWidget .pros-item .pros-chev svg {
+            transition: transform 0.18s ease;
+        }
+        #prospectsWidget .pros-item[aria-expanded="true"] .pros-chev svg {
+            transform: rotate(90deg);
+        }
+        #prospectsWidget .pros-details {
+            padding: 4px 4px 16px 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        #prospectsWidget .pros-details[hidden] {
+            display: none;
+        }
+        #prospectsWidget .pros-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 18px;
+        }
+        #prospectsWidget .pros-detail-label {
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 0.4px;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        #prospectsWidget .pros-detail-value {
+            font-size: 14px;
+            font-weight: 400;
+            color: #1a1a1a;
+            word-break: break-word;
+            line-height: 1.35;
+        }
+        #prospectsWidget .pros-detail-value--muted {
+            color: #888;
+        }
+        #prospectsWidget .pros-detail-id-block {
+            border-top: 1px solid #ececec;
+            padding-top: 14px;
+        }
+        #prospectsWidget .pros-detail-id-value {
+            font-size: 13px;
+            color: #1a1a1a;
+            word-break: break-all;
+            line-height: 1.35;
+        }
+        #prospectsWidget .pros-collapsible-wrap {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        #prospectsWidget .pros-collapsible-wrap + .pros-collapsible-wrap {
+            margin-top: 10px;
+        }
+        #prospectsWidget .pros-collapsible {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            padding: 12px 14px;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 400;
+            color: #1a1a1a;
+            font-family: inherit;
+        }
+        #prospectsWidget .pros-collapsible-chev {
+            color: #1a1a1a;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            transition: transform 0.18s ease;
+        }
+        #prospectsWidget .pros-collapsible[aria-expanded="true"] .pros-collapsible-chev {
+            transform: rotate(90deg);
+        }
+        #prospectsWidget .pros-collapsible-body[hidden] {
+            display: none;
+        }
+        #prospectsWidget .pros-collapsible-body {
+            padding: 0 14px 16px;
+        }
+        #prospectsWidget .pros-collapsible-body-divider {
+            height: 1px;
+            background: #ececec;
+            margin: 0 -14px 14px;
+        }
+        #prospectsWidget .pros-no-offers {
+            text-align: center;
+            color: #b5b5b5;
+            font-size: 14px;
+            padding: 14px 0 4px;
+        }
+
+        /* Offer card content */
+        #prospectsWidget .pros-offer-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 12px;
+            align-items: start;
+        }
+        #prospectsWidget .pros-offer-extra {
+            margin-top: 18px;
+        }
+        #prospectsWidget .pros-status-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            border: 1px solid transparent;
+            white-space: nowrap;
+        }
+        #prospectsWidget .pros-status-badge--expired {
+            background: #FBEBEB;
+            color: #D24040;
+            border-color: #F2C9C9;
+        }
+        #prospectsWidget .pros-status-badge--ordered {
+            background: #FFF1DE;
+            color: #C57C18;
+            border-color: #F0D6A8;
+        }
+
+        /* Pedidos de cuenta: orden + sub-collapsible */
+        #prospectsWidget .pros-order-item + .pros-order-item {
+            margin-top: 14px;
+        }
+        #prospectsWidget .pros-order-head {
+            display: flex;
+            width: 100%;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 10px;
+            background: transparent;
+            border: none;
+            padding: 4px 0 8px;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            color: #1a1a1a;
+        }
+        #prospectsWidget .pros-order-head-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            min-width: 0;
+        }
+        #prospectsWidget .pros-order-meta {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            color: #888;
+            text-transform: uppercase;
+        }
+        #prospectsWidget .pros-order-meta-sep {
+            margin: 0 4px;
+            color: #888;
+        }
+        #prospectsWidget .pros-order-name {
+            font-size: 15px;
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        #prospectsWidget .pros-order-chev {
+            color: #1a1a1a;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            flex-shrink: 0;
+            transition: transform 0.18s ease;
+        }
+        #prospectsWidget .pros-order-head[aria-expanded="true"] .pros-order-chev {
+            transform: rotate(90deg);
+        }
+        #prospectsWidget .pros-order-body {
+            background: #f7f7f7;
+            border-radius: 4px;
+            padding: 14px 14px 4px;
+            margin-top: 4px;
+        }
+        #prospectsWidget .pros-order-body[hidden] {
+            display: none;
+        }
+        #prospectsWidget .pros-order-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 18px;
+        }
+        #prospectsWidget .pros-order-grid .pros-detail-value--full {
+            grid-column: 1 / -1;
+        }
+        #prospectsWidget .pros-order-ids {
+            margin-top: 18px;
+            padding-top: 16px;
+            border-top: 1px solid #ececec;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .phone-type-select {
+            position: relative;
+            flex: 0 0 auto;
+            width: 90px;
+        }
+        .phone-type-select .phone-type-trigger {
+            width: 100%;
+            padding: 3px 18px 3px 6px;
+            background: white;
+            border: none;
+            border-bottom: 1px solid #c4c4c4;
+            border-radius: 0;
+            font-size: 11px;
+            color: #1a1a1a;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .phone-type-select .phone-type-trigger[aria-expanded="true"] {
+            border-bottom-color: #7C4DBC;
+        }
+
+        .phone-type-menu {
+            position: fixed;
+            min-width: 170px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            z-index: 1000;
+            padding: 8px;
+            display: none;
+        }
+        .phone-type-menu.is-open {
+            display: block;
+        }
+        .phone-type-menu .phone-type-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 9px 12px;
+            font-size: 14px;
+            color: #1a1a1a;
+            border-radius: 6px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .phone-type-menu .phone-type-option:hover {
+            background: #f4eeff;
+        }
+        .phone-type-menu .phone-type-option.is-selected {
+            background: #ebd9ff;
+        }
+        .phone-type-menu .phone-type-option-check {
+            color: #1a1a1a;
+            display: inline-flex;
+            visibility: hidden;
+        }
+        .phone-type-menu .phone-type-option.is-selected .phone-type-option-check {
+            visibility: visible;
+        }
+
+        .phone-add-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 10px;
+            background: transparent;
+            min-height: 28px;
+            margin-top: 8px;
+        }
+        .phone-add-row[hidden] {
+            display: none;
+        }
+        .phone-add-number-input {
+            flex: 1 1 0;
+            min-width: 0;
+            padding: 5px 8px;
+            border: 1.5px solid #e74c3c;
+            border-radius: 4px;
+            background: #fff;
+            font-size: 12px;
+            color: #1a1a1a;
+            font-family: inherit;
+            outline: none;
+        }
+        .phone-add-number-input:focus {
+            border-color: #e74c3c;
+            box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.12);
+        }
+        .phone-add-type {
+            position: relative;
+            flex: 0 0 auto;
+            width: 90px;
+        }
+        .phone-add-type-trigger {
+            width: 100%;
+            padding: 4px 6px;
+            background: #fff;
+            border: none;
+            border-bottom: 1px solid #c4c4c4;
+            border-radius: 0;
+            font-size: 11px;
+            color: #1a1a1a;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4px;
+        }
+        .phone-add-type-trigger[aria-expanded="true"] {
+            border-bottom-color: #7C4DBC;
+        }
+        .phone-add-type-menu {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            right: 0;
+            min-width: 130px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+            z-index: 30;
+            padding: 4px;
+            display: none;
+        }
+        .phone-add-type-menu.is-open {
+            display: block;
+        }
+        .phone-add-type-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 8px 10px;
+            font-size: 13px;
+            color: #1a1a1a;
+            border-radius: 6px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .phone-add-type-option:hover {
+            background: #f4eeff;
+        }
+        .phone-add-type-option.is-selected {
+            background: #ebd9ff;
+            color: #1a1a1a;
+        }
+        .phone-add-type-option-check {
+            color: #1a1a1a;
+            display: inline-flex;
+            visibility: hidden;
+        }
+        .phone-add-type-option.is-selected .phone-add-type-option-check {
+            visibility: visible;
+        }
+        .phone-add-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .phone-add-action-btn {
+            background: transparent;
+            border: none;
+            padding: 4px;
+            margin: 0;
+            cursor: pointer;
+            color: #555;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            border-radius: 4px;
+        }
+        .phone-add-action-btn:hover {
+            color: #1a1a1a;
+            background: #f0f0f0;
+        }
+
+        #phoneFooter.widget-footer-source {
+            padding: 8px 14px;
+            min-height: 0;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            background: #fff;
+            border-top: 1px solid #ececec;
+        }
+
+        #phoneFooter .phone-footer-left,
+        #phoneFooter .phone-footer-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #phoneFooter .phone-footer-label {
+            font-size: 12px;
+            color: #555;
+            font-weight: 400;
+            font-family: Arial, Helvetica, sans-serif;
+            white-space: nowrap;
+        }
+
+        #phoneFooter .phone-footer-icon-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #555;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            transition: color 0.15s;
+        }
+
+        #phoneFooter .phone-footer-icon-btn:hover {
+            color: #7C4DBC;
+        }
+
+        #interactionFooter.widget-footer-source {
+            padding: 8px 14px;
+            min-height: 0;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            background: #fff;
+            border-top: 1px solid #ececec;
+        }
+
+        #interactionFooter .interaction-footer-left,
+        #interactionFooter .interaction-footer-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #interactionFooter .interaction-footer-label {
+            font-size: 12px;
+            color: #555;
+            font-weight: 400;
+            font-family: Arial, Helvetica, sans-serif;
+            white-space: nowrap;
+        }
+
+        #interactionFooter .interaction-footer-icon-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #555;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            transition: color 0.15s;
+        }
+
+        #interactionFooter .interaction-footer-icon-btn:hover {
+            color: #7C4DBC;
+        }
+
+        .interaction-tabs {
+            display: flex;
+            gap: 0;
+            padding: 0 16px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .interaction-tab {
+            padding: 10px 14px;
+            border: none;
+            background: none;
+            font-size: 13px;
+            font-weight: 500;
+            color: #666;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -1px;
+        }
+
+        .interaction-tab:hover {
+            color: #333;
+        }
+
+        .interaction-tab.active {
+            color: #7C4DBC;
+            border-bottom-color: #7C4DBC;
+        }
+
+        /* Documents: pie HTML con refresh + nombre (izq) y Rate this widget + manitos (der) */
+        #documentsWidget .widget-footer-source {
+            padding: 8px 14px;
+            min-height: 0;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            background: #fff;
+            border-top: 1px solid #ececec;
+        }
+
+        #documentsFooter .documents-footer-left,
+        #documentsFooter .documents-footer-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #documentsFooter .documents-footer-label {
+            font-size: 12px;
+            color: #555;
+            font-weight: 400;
+            font-family: Arial, Helvetica, sans-serif;
+            white-space: nowrap;
+        }
+
+        #documentsFooter .documents-footer-icon-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #555;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            transition: color 0.15s;
+        }
+
+        #documentsFooter .documents-footer-icon-btn:hover {
+            color: #7C4DBC;
+        }
+
+        .date-filters-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .date-filters-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        /* Person Information V2 — versión con tabs (Customer / Addresses / Devices) */
+        #personInfoV2Widget {
+            border-left: 2px solid #7C4DBC;
+            border-right: 2px solid #7C4DBC;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        #personInfoV2Widget .widget-header {
+            border-radius: 8px 8px 0 0;
+        }
+        #personInfoV2Widget.collapsed .widget-header {
+            border-radius: 8px;
+        }
+        #personInfoV2Widget .widget-title {
+            font-weight: 700;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #personInfoV2Widget .widget-content {
+            padding: 0 !important;
+            background: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #personInfoV2Widget .piv2-tabs {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            padding: 14px 18px 0;
+            border-bottom: 1px solid #ececec;
+        }
+        #personInfoV2Widget .piv2-tab {
+            background: none;
+            border: none;
+            padding: 4px 0 10px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #888;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            line-height: 1.2;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #personInfoV2Widget .piv2-tab.is-active {
+            color: #6A1B9A;
+            border-bottom-color: #6A1B9A;
+        }
+        #personInfoV2Widget .piv2-body {
+            padding: 14px 18px 18px;
+            max-height: 500px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: #c8c0d6 transparent;
+        }
+        #personInfoV2Widget .piv2-body::-webkit-scrollbar {
+            width: 8px;
+        }
+        #personInfoV2Widget .piv2-body::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        #personInfoV2Widget .piv2-body::-webkit-scrollbar-thumb {
+            background-color: #c8c0d6;
+            border-radius: 4px;
+        }
+        #personInfoV2Widget .piv2-body::-webkit-scrollbar-thumb:hover {
+            background-color: #a99cc0;
+        }
+        #personInfoV2Widget .piv2-panel { display: none; }
+        #personInfoV2Widget .piv2-panel.is-active { display: block; }
+        #personInfoV2Widget .piv2-cust-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #ececec;
+        }
+        #personInfoV2Widget .piv2-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #7C4DBC;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            font-style: italic;
+            flex-shrink: 0;
+            letter-spacing: -0.02em;
+        }
+        #personInfoV2Widget .piv2-cust-head-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            min-width: 0;
+        }
+        #personInfoV2Widget .piv2-pref-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        #personInfoV2Widget .piv2-pref-value {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: #1a1a1a;
+        }
+        #personInfoV2Widget .piv2-field {
+            padding: 12px 0;
+            border-bottom: 1px solid #ececec;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        #personInfoV2Widget .piv2-field:last-child {
+            border-bottom: none;
+        }
+        #personInfoV2Widget .piv2-field-label {
+            font-size: 12px;
+            font-weight: 400;
+            color: #888;
+        }
+        #personInfoV2Widget .piv2-field-value {
+            font-size: 14px;
+            font-weight: 400;
+            color: #1a1a1a;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            word-break: break-word;
+        }
+        #personInfoV2Widget .piv2-section-title {
+            font-size: 12px;
+            font-weight: 400;
+            color: #888;
+            padding: 14px 0 4px;
+            margin-top: 4px;
+        }
+        #personInfoV2Widget .piv2-addr-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+        }
+        #personInfoV2Widget .piv2-addr-text {
+            font-size: 14px;
+            color: #1a1a1a;
+            line-height: 1.45;
+            white-space: pre-line;
+            flex: 1;
+            min-width: 0;
+            word-break: break-word;
+        }
+        #personInfoV2Widget .piv2-icon-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            color: #7C4DBC;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            flex-shrink: 0;
+        }
+        #personInfoV2Widget .piv2-icon-btn--muted {
+            color: #888;
+        }
+        #personInfoV2Widget .piv2-icon-btn:hover {
+            opacity: 0.8;
+        }
+        #personInfoV2Widget .piv2-check {
+            color: #888;
+            display: inline-flex;
+            align-items: center;
+        }
+        #personInfoV2Widget .piv2-warn {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 12px;
+            background: #FCE9D6;
+            border-radius: 4px;
+            color: #B25C12;
+            font-size: 13px;
+            margin: 12px 0 4px;
+        }
+        #personInfoV2Widget .piv2-warn svg { flex-shrink: 0; }
+        #personInfoV2Widget .piv2-other-toggle {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 14px;
+            margin: 12px 0 0;
+            background: #ededed;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #1a1a1a;
+            cursor: pointer;
+            font-weight: 600;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #personInfoV2Widget .piv2-other-toggle .piv2-chev {
+            transition: transform 0.2s;
+            color: #555;
+        }
+        #personInfoV2Widget .piv2-other-toggle.is-open .piv2-chev {
+            transform: rotate(90deg);
+        }
+        #personInfoV2Widget .piv2-other-list {
+            display: none;
+            padding: 0 14px;
+        }
+        #personInfoV2Widget .piv2-other-toggle.is-open + .piv2-other-list {
+            display: block;
+        }
+        #personInfoV2Widget .piv2-other-item {
+            padding: 14px 0;
+            border-bottom: 1px solid #ececec;
+            font-size: 14px;
+            color: #1a1a1a;
+            word-break: break-word;
+            line-height: 1.45;
+        }
+        #personInfoV2Widget .piv2-other-item:last-child {
+            border-bottom: none;
+        }
+        #personInfoV2Widget .piv2-footer {
+            padding: 8px 14px;
+            background: #fff;
+            border-top: 1px solid #ececec;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            flex-wrap: nowrap;
+        }
+        #personInfoV2Widget .piv2-footer-left,
+        #personInfoV2Widget .piv2-footer-right {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        #personInfoV2Widget .piv2-foot-label {
+            font-size: 11px;
+            color: #555;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+
+        /* Prospects Widget */
+        #prospectsWidget {
+            border-left: 2px solid #7C4DBC;
+            border-right: 2px solid #7C4DBC;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        #prospectsWidget .widget-header {
+            border-radius: 8px 8px 0 0;
+        }
+        #prospectsWidget.collapsed .widget-header {
+            border-radius: 8px;
+        }
+        #prospectsWidget .widget-title {
+            font-weight: 700;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #prospectsWidget .widget-content {
+            padding: 0 !important;
+            background: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #prospectsWidget .pros-filters {
+            display: flex;
+            gap: 8px;
+            padding: 10px 14px 8px;
+        }
+        #prospectsWidget .pros-filter {
+            flex: 1;
+            min-width: 0;
+            padding: 6px 24px 6px 10px;
+            border: 1px solid #d8d8d8;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 400;
+            color: #1a1a1a;
+            background-color: #fff;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 12 12'%3E%3Cpath fill='%23555' d='M6 8L2 4h8z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            appearance: none;
+            cursor: pointer;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.3;
+        }
+        #prospectsWidget .pros-list {
+            max-height: 480px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 0 18px;
+            border-top: 1px solid #ececec;
+            scrollbar-width: thin;
+            scrollbar-color: #c8c0d6 transparent;
+        }
+        #prospectsWidget .pros-list::-webkit-scrollbar { width: 8px; }
+        #prospectsWidget .pros-list::-webkit-scrollbar-track { background: transparent; }
+        #prospectsWidget .pros-list::-webkit-scrollbar-thumb {
+            background-color: #c8c0d6;
+            border-radius: 4px;
+        }
+        #prospectsWidget .pros-list::-webkit-scrollbar-thumb:hover {
+            background-color: #a99cc0;
+        }
+        #prospectsWidget .pros-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 0;
+            border-bottom: 1px solid #ececec;
+            cursor: pointer;
+        }
+        #prospectsWidget .pros-item:last-of-type {
+            border-bottom: none;
+        }
+        #prospectsWidget .pros-chev {
+            color: #7C4DBC;
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+        }
+        #prospectsWidget .pros-info {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        #prospectsWidget .pros-meta {
+            font-size: 13px;
+            font-weight: 400;
+            color: #888;
+            line-height: 1.3;
+        }
+        #prospectsWidget .pros-meta-sep {
+            margin: 0 6px;
+            color: #aaa;
+            letter-spacing: 1px;
+        }
+        #prospectsWidget .pros-email {
+            font-size: 14px;
+            font-weight: 400;
+            color: #1a1a1a;
+            word-break: break-word;
+            line-height: 1.3;
+        }
+        #prospectsWidget .pros-footer {
+            padding: 8px 14px;
+            background: #fff;
+            border-top: 1px solid #ececec;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            flex-wrap: nowrap;
+        }
+        #prospectsWidget .pros-footer-left,
+        #prospectsWidget .pros-footer-right {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        #prospectsWidget .pros-foot-label {
+            font-size: 11px;
+            color: #555;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+        #prospectsWidget .pros-icon-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #888;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+        }
+
+        /* ── Panel desplegable de cada Prospect ── */
+        #prospectsWidget .pros-row {
+            border-bottom: 1px solid #ececec;
+        }
+        #prospectsWidget .pros-row:last-child {
+            border-bottom: none;
+        }
+        #prospectsWidget .pros-row .pros-item {
+            border-bottom: none;
+        }
+        #prospectsWidget .pros-item .pros-chev svg {
+            transition: transform 0.18s ease;
+        }
+        #prospectsWidget .pros-item[aria-expanded="true"] .pros-chev svg {
+            transform: rotate(90deg);
+        }
+        #prospectsWidget .pros-details {
+            padding: 4px 4px 16px 26px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        #prospectsWidget .pros-details[hidden] {
+            display: none;
+        }
+        #prospectsWidget .pros-details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 18px;
+        }
+        #prospectsWidget .pros-detail-label {
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 0.4px;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+        #prospectsWidget .pros-detail-value {
+            font-size: 14px;
+            font-weight: 400;
+            color: #1a1a1a;
+            word-break: break-word;
+            line-height: 1.35;
+        }
+        #prospectsWidget .pros-detail-value--muted {
+            color: #888;
+        }
+        #prospectsWidget .pros-detail-id-block {
+            border-top: 1px solid #ececec;
+            padding-top: 14px;
+        }
+        #prospectsWidget .pros-detail-id-value {
+            font-size: 13px;
+            color: #1a1a1a;
+            word-break: break-all;
+            line-height: 1.35;
+        }
+        #prospectsWidget .pros-collapsible-wrap {
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        #prospectsWidget .pros-collapsible-wrap + .pros-collapsible-wrap {
+            margin-top: 10px;
+        }
+        #prospectsWidget .pros-collapsible {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            padding: 12px 14px;
+            background: transparent;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 400;
+            color: #1a1a1a;
+            font-family: inherit;
+        }
+        #prospectsWidget .pros-collapsible-chev {
+            color: #1a1a1a;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            transition: transform 0.18s ease;
+        }
+        #prospectsWidget .pros-collapsible[aria-expanded="true"] .pros-collapsible-chev {
+            transform: rotate(90deg);
+        }
+        #prospectsWidget .pros-collapsible-body[hidden] {
+            display: none;
+        }
+        #prospectsWidget .pros-collapsible-body {
+            padding: 0 14px 16px;
+        }
+        #prospectsWidget .pros-collapsible-body-divider {
+            height: 1px;
+            background: #ececec;
+            margin: 0 -14px 14px;
+        }
+        #prospectsWidget .pros-no-offers {
+            text-align: center;
+            color: #b5b5b5;
+            font-size: 14px;
+            padding: 14px 0 4px;
+        }
+
+        /* Offer card content */
+        #prospectsWidget .pros-offer-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 12px;
+            align-items: start;
+        }
+        #prospectsWidget .pros-offer-extra {
+            margin-top: 18px;
+        }
+        #prospectsWidget .pros-status-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            border: 1px solid transparent;
+            white-space: nowrap;
+        }
+        #prospectsWidget .pros-status-badge--expired {
+            background: #FBEBEB;
+            color: #D24040;
+            border-color: #F2C9C9;
+        }
+        #prospectsWidget .pros-status-badge--ordered {
+            background: #FFF1DE;
+            color: #C57C18;
+            border-color: #F0D6A8;
+        }
+
+        /* Pedidos de cuenta: orden + sub-collapsible */
+        #prospectsWidget .pros-order-item + .pros-order-item {
+            margin-top: 14px;
+        }
+        #prospectsWidget .pros-order-head {
+            display: flex;
+            width: 100%;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 10px;
+            background: transparent;
+            border: none;
+            padding: 4px 0 8px;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            color: #1a1a1a;
+        }
+        #prospectsWidget .pros-order-head-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            min-width: 0;
+        }
+        #prospectsWidget .pros-order-meta {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            color: #888;
+            text-transform: uppercase;
+        }
+        #prospectsWidget .pros-order-meta-sep {
+            margin: 0 4px;
+            color: #888;
+        }
+        #prospectsWidget .pros-order-name {
+            font-size: 15px;
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        #prospectsWidget .pros-order-chev {
+            color: #1a1a1a;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            flex-shrink: 0;
+            transition: transform 0.18s ease;
+        }
+        #prospectsWidget .pros-order-head[aria-expanded="true"] .pros-order-chev {
+            transform: rotate(90deg);
+        }
+        #prospectsWidget .pros-order-body {
+            background: #f7f7f7;
+            border-radius: 4px;
+            padding: 14px 14px 4px;
+            margin-top: 4px;
+        }
+        #prospectsWidget .pros-order-body[hidden] {
+            display: none;
+        }
+        #prospectsWidget .pros-order-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 18px;
+        }
+        #prospectsWidget .pros-order-grid .pros-detail-value--full {
+            grid-column: 1 / -1;
+        }
+        #prospectsWidget .pros-order-ids {
+            margin-top: 18px;
+            padding-top: 16px;
+            border-top: 1px solid #ececec;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        #phoneFooter.widget-footer-source {
+            padding: 8px 14px;
+            min-height: 0;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            background: #fff;
+            border-top: 1px solid #ececec;
+        }
+
+        #phoneFooter .phone-footer-left,
+        #phoneFooter .phone-footer-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #phoneFooter .phone-footer-label {
+            font-size: 12px;
+            color: #555;
+            font-weight: 400;
+            font-family: Arial, Helvetica, sans-serif;
+            white-space: nowrap;
+        }
+
+        #phoneFooter .phone-footer-icon-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #555;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            transition: color 0.15s;
+        }
+
+        #phoneFooter .phone-footer-icon-btn:hover {
+            color: #7C4DBC;
+        }
+
+        #interactionFooter.widget-footer-source {
+            padding: 8px 14px;
+            min-height: 0;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            background: #fff;
+            border-top: 1px solid #ececec;
+        }
+
+        #interactionFooter .interaction-footer-left,
+        #interactionFooter .interaction-footer-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #interactionFooter .interaction-footer-label {
+            font-size: 12px;
+            color: #555;
+            font-weight: 400;
+            font-family: Arial, Helvetica, sans-serif;
+            white-space: nowrap;
+        }
+
+        #interactionFooter .interaction-footer-icon-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #555;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            transition: color 0.15s;
+        }
+
+        #interactionFooter .interaction-footer-icon-btn:hover {
+            color: #7C4DBC;
+        }
+
+        .phone-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 10px;
+            background: #e8e8e8;
+            border-radius: 0;
+            min-height: 28px;
+            min-width: 0;
+        }
+
+        .phone-number {
+            flex: 1 1 0;
+            min-width: 0;
+            font-size: 12px;
+            color: #1a1a1a;
+            font-weight: 400;
+            line-height: 1.35;
+            word-break: break-word;
+        }
+
+        .phone-type {
+            flex: 0 0 auto;
+            min-width: 0;
+            width: 90px;
+            padding: 3px 6px 3px;
+            background: white;
+            border: none;
+            border-bottom: 1px solid #c4c4c4;
+            border-radius: 0;
+            font-size: 11px;
+            color: #1a1a1a;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Phone type select (en cada phone-item) */
+        .phone-type-select {
+            position: relative;
+            flex: 0 0 auto;
+            width: 90px;
+        }
+        .phone-type-select .phone-type-trigger {
+            width: 100%;
+            padding: 3px 18px 3px 6px;
+            background: white;
+            border: none;
+            border-bottom: 1px solid #c4c4c4;
+            border-radius: 0;
+            font-size: 11px;
+            color: #1a1a1a;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            line-height: 1.4;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .phone-type-select .phone-type-trigger[aria-expanded="true"] {
+            border-bottom-color: #7C4DBC;
+        }
+
+        .phone-type-menu {
+            position: fixed;
+            min-width: 170px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            z-index: 1000;
+            padding: 8px;
+            display: none;
+        }
+        .phone-type-menu.is-open {
+            display: block;
+        }
+        .phone-type-menu .phone-type-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 9px 12px;
+            font-size: 14px;
+            color: #1a1a1a;
+            border-radius: 6px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .phone-type-menu .phone-type-option:hover {
+            background: #f4eeff;
+        }
+        .phone-type-menu .phone-type-option.is-selected {
+            background: #ebd9ff;
+        }
+        .phone-type-menu .phone-type-option-check {
+            color: #1a1a1a;
+            display: inline-flex;
+            visibility: hidden;
+        }
+        .phone-type-menu .phone-type-option.is-selected .phone-type-option-check {
+            visibility: visible;
+        }
+
+        .phone-owner {
+            font-size: 11px;
+            color: #1a1a1a;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ── Formulario Add Phone ── */
+        .phone-add-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 10px;
+            background: transparent;
+            min-height: 28px;
+            margin-top: 8px;
+        }
+        .phone-add-row[hidden] {
+            display: none;
+        }
+        .phone-add-number-input {
+            flex: 1 1 0;
+            min-width: 0;
+            padding: 5px 8px;
+            border: 1.5px solid #e74c3c;
+            border-radius: 4px;
+            background: #fff;
+            font-size: 12px;
+            color: #1a1a1a;
+            font-family: inherit;
+            outline: none;
+        }
+        .phone-add-number-input:focus {
+            border-color: #e74c3c;
+            box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.12);
+        }
+        .phone-add-type {
+            position: relative;
+            flex: 0 0 auto;
+            width: 90px;
+        }
+        .phone-add-type-trigger {
+            width: 100%;
+            padding: 4px 6px;
+            background: #fff;
+            border: none;
+            border-bottom: 1px solid #c4c4c4;
+            border-radius: 0;
+            font-size: 11px;
+            color: #1a1a1a;
+            cursor: pointer;
+            text-align: left;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4px;
+        }
+        .phone-add-type-trigger[aria-expanded="true"] {
+            border-bottom-color: #7C4DBC;
+        }
+        .phone-add-type-menu {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            right: 0;
+            min-width: 130px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 6px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+            z-index: 30;
+            padding: 4px;
+            display: none;
+        }
+        .phone-add-type-menu.is-open {
+            display: block;
+        }
+        .phone-add-type-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 8px 10px;
+            font-size: 13px;
+            color: #1a1a1a;
+            border-radius: 6px;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .phone-add-type-option:hover {
+            background: #f4eeff;
+        }
+        .phone-add-type-option.is-selected {
+            background: #ebd9ff;
+            color: #1a1a1a;
+        }
+        .phone-add-type-option-check {
+            color: #1a1a1a;
+            display: inline-flex;
+            visibility: hidden;
+        }
+        .phone-add-type-option.is-selected .phone-add-type-option-check {
+            visibility: visible;
+        }
+        .phone-add-actions {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+        .phone-add-action-btn {
+            background: transparent;
+            border: none;
+            padding: 4px;
+            margin: 0;
+            cursor: pointer;
+            color: #555;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            border-radius: 4px;
+        }
+        .phone-add-action-btn:hover {
+            color: #1a1a1a;
+            background: #f0f0f0;
+        }
+
+        .date-filters-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #1a1a1a;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .date-filters-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .interaction-tabs {
+            display: flex;
+            gap: 0;
+            padding: 0 16px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .interaction-tab {
+            padding: 10px 14px;
+            border: none;
+            background: none;
+            font-size: 13px;
+            font-weight: 500;
+            color: #666;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -1px;
+        }
+
+        .interaction-tab:hover {
+            color: #333;
+        }
+
+        .interaction-tab.active {
+            color: #7C4DBC;
+            border-bottom-color: #7C4DBC;
+        }
+
+        .year-separator {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 16px;
+            background: transparent;
+            font-size: 14px;
+            font-weight: 400;
+            color: #333;
+            border: none;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .year-separator::before,
+        .year-separator::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #e5e5e5;
+        }
+
+        .interaction-item {
+            padding: 10px 16px;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .interaction-item:last-child {
+            border-bottom: none;
+        }
+
+        .interaction-time {
+            font-size: 13px;
+            font-weight: 400;
+            color: #7C4DBC;
+            margin-bottom: 6px;
+        }
+
+        .interaction-type {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        /* Documents: pie HTML con refresh + nombre (izq) y Rate this widget + manitos (der) */
+        #documentsWidget .widget-footer-source {
+            padding: 8px 14px;
+            min-height: 0;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            background: #fff;
+            border-top: 1px solid #ececec;
+        }
+
+        #documentsFooter .documents-footer-left,
+        #documentsFooter .documents-footer-right {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #documentsFooter .documents-footer-label {
+            font-size: 12px;
+            color: #555;
+            font-weight: 400;
+            font-family: Arial, Helvetica, sans-serif;
+            white-space: nowrap;
+        }
+
+        #documentsFooter .documents-footer-icon-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #555;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            transition: color 0.15s;
+        }
+
+        #documentsFooter .documents-footer-icon-btn:hover {
+            color: #7C4DBC;
+        }
+
     </style>
 </head>
 <body>
@@ -18355,6 +20388,802 @@
                     </div>
                 </div>
 
+                <!-- Person Information V2 Widget -->
+                <div class="widget" id="personInfoV2Widget">
+                    <div class="widget-header" onclick="toggleWidget('personInfoV2Widget')">
+                        <h2 class="widget-title">Person Information V2</h2>
+                        <div class="header-right">
+                            <div class="menu-icon" onclick="event.stopPropagation(); toggleWidgetMenu(event);">⋮</div>
+                            <div class="collapse-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 5.25L7 8.75L10.5 5.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="widget-content" id="personInfoV2Content">
+                        <div class="piv2-tabs" role="tablist" aria-label="Person Information V2 tabs">
+                            <button type="button" class="piv2-tab is-active" role="tab" aria-selected="true" data-piv2-target="piv2PanelCustomer" onclick="piv2SwitchTab(this)">Customer</button>
+                            <button type="button" class="piv2-tab" role="tab" aria-selected="false" data-piv2-target="piv2PanelAddresses" onclick="piv2SwitchTab(this)">Addresses</button>
+                            <button type="button" class="piv2-tab" role="tab" aria-selected="false" data-piv2-target="piv2PanelDevices" onclick="piv2SwitchTab(this)">Devices</button>
+                        </div>
+                        <div class="piv2-body">
+                            <!-- Customer panel -->
+                            <div class="piv2-panel is-active" id="piv2PanelCustomer" role="tabpanel">
+                                <div class="piv2-cust-head">
+                                    <div class="piv2-avatar" aria-hidden="true">nu</div>
+                                    <div class="piv2-cust-head-text">
+                                        <span class="piv2-pref-label">Preferred Name</span>
+                                        <span class="piv2-pref-value">
+                                            <span>Martha Lucía</span>
+                                            <button type="button" class="piv2-icon-btn" title="Copy" aria-label="Copy preferred name" data-piv2-copy="Martha Lucía" onclick="piv2Copy(this, event)">
+                                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                            </button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="piv2-field">
+                                    <span class="piv2-field-label">Full Name</span>
+                                    <span class="piv2-field-value">
+                                        <span>Martha Lucía Gómez Ruiz</span>
+                                        <button type="button" class="piv2-icon-btn" title="Copy" aria-label="Copy full name" data-piv2-copy="Martha Lucía Gómez Ruiz" onclick="piv2Copy(this, event)">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="piv2-field">
+                                    <span class="piv2-field-label">Printed Name</span>
+                                    <span class="piv2-field-value">
+                                        <span>MARTHA GÓMEZ</span>
+                                        <button type="button" class="piv2-icon-btn" title="Copy" aria-label="Copy printed name" data-piv2-copy="MARTHA GÓMEZ" onclick="piv2Copy(this, event)">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="piv2-field">
+                                    <span class="piv2-field-label">Date of Birth</span>
+                                    <span class="piv2-field-value">
+                                        <span>22/11/1975</span>
+                                        <button type="button" class="piv2-icon-btn" title="Copy" aria-label="Copy date of birth" data-piv2-copy="22/11/1975" onclick="piv2Copy(this, event)">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="piv2-field">
+                                    <span class="piv2-field-label">Gender</span>
+                                    <span class="piv2-field-value">Not Available</span>
+                                </div>
+                                <div class="piv2-field">
+                                    <span class="piv2-field-label">Age</span>
+                                    <span class="piv2-field-value">
+                                        <span>50</span>
+                                        <button type="button" class="piv2-icon-btn" title="Copy" aria-label="Copy age" data-piv2-copy="50" onclick="piv2Copy(this, event)">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="piv2-section-title">Contact</div>
+                                <div class="piv2-field">
+                                    <span class="piv2-field-label">Email</span>
+                                    <span class="piv2-field-value">
+                                        <span>martha.gomez.tst@mail.co</span>
+                                        <span class="piv2-check" title="Verified" aria-label="Verified">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 12.5l2.5 2.5 4.5-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </span>
+                                        <button type="button" class="piv2-icon-btn piv2-icon-btn--muted" title="History" aria-label="Email history">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 3v5h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </button>
+                                        <button type="button" class="piv2-icon-btn" title="Copy" aria-label="Copy email" data-piv2-copy="martha.gomez.tst@mail.co" onclick="piv2Copy(this, event)">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="piv2-field">
+                                    <span class="piv2-field-label">Phone</span>
+                                    <span class="piv2-field-value">
+                                        <span>(57) 30021-2445 5</span>
+                                        <button type="button" class="piv2-icon-btn piv2-icon-btn--muted" title="History" aria-label="Phone history">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 3v5h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </button>
+                                        <button type="button" class="piv2-icon-btn" title="Copy" aria-label="Copy phone" data-piv2-copy="(57) 30021-2445 5" onclick="piv2Copy(this, event)">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="piv2-section-title">Documents</div>
+                                <div class="piv2-field">
+                                    <span class="piv2-field-label">Tax ID</span>
+                                    <span class="piv2-field-value">
+                                        <span>CC -98765433</span>
+                                        <button type="button" class="piv2-icon-btn" title="Copy" aria-label="Copy tax id" data-piv2-copy="CC -98765433" onclick="piv2Copy(this, event)">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="piv2-section-title">Other Information</div>
+                                <div class="piv2-field">
+                                    <span class="piv2-field-label">Profession</span>
+                                    <span class="piv2-field-value">Not Available</span>
+                                </div>
+                                <div class="piv2-field">
+                                    <span class="piv2-field-label">Nationality</span>
+                                    <span class="piv2-field-value">Not Available</span>
+                                </div>
+                                <div class="piv2-field">
+                                    <span class="piv2-field-label">Mother's Name</span>
+                                    <span class="piv2-field-value">Not Available</span>
+                                </div>
+                                <div class="piv2-field">
+                                    <span class="piv2-field-label">Marital Status</span>
+                                    <span class="piv2-field-value">Not Available</span>
+                                </div>
+                                <div class="piv2-field">
+                                    <span class="piv2-field-label">Preferred Language</span>
+                                    <span class="piv2-field-value">Not Available</span>
+                                </div>
+                                <div class="piv2-field">
+                                    <span class="piv2-field-label">Customer ID</span>
+                                    <span class="piv2-field-value">
+                                        <span>a1b2c3d4-e5f6-47a8-b9c0-d1e2f3a4b5c6</span>
+                                        <button type="button" class="piv2-icon-btn" title="Copy" aria-label="Copy customer id" data-piv2-copy="a1b2c3d4-e5f6-47a8-b9c0-d1e2f3a4b5c6" onclick="piv2Copy(this, event)">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </button>
+                                    </span>
+                                </div>
+                                <div class="piv2-field">
+                                    <span class="piv2-field-label">Shard</span>
+                                    <span class="piv2-field-value">
+                                        <span>s0</span>
+                                        <button type="button" class="piv2-icon-btn" title="Copy" aria-label="Copy shard" data-piv2-copy="s0" onclick="piv2Copy(this, event)">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Addresses panel -->
+                            <div class="piv2-panel" id="piv2PanelAddresses" role="tabpanel">
+                                <div class="piv2-section-title" style="padding-top: 4px;">Shipping address</div>
+                                <div class="piv2-addr-row">
+                                    <div class="piv2-addr-text">Calle 34Z Sur #99S-00
+Bogotá, D.C., 110011, Colombia</div>
+                                    <button type="button" class="piv2-icon-btn piv2-icon-btn--muted" title="History" aria-label="Shipping address history">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 3v5h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </button>
+                                </div>
+                                <div style="margin-top: 6px;">
+                                    <button type="button" class="piv2-icon-btn" title="Copy" aria-label="Copy shipping address" data-piv2-copy="Calle 34Z Sur #99S-00, Bogotá, D.C., 110011, Colombia" onclick="piv2Copy(this, event)">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </button>
+                                </div>
+                                <div class="piv2-warn" role="status">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 3 L22 20 L2 20 Z" stroke="#B25C12" stroke-width="1.6" stroke-linejoin="round" fill="none"/><path d="M12 10v4" stroke="#B25C12" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="17" r="1" fill="#B25C12"/></svg>
+                                    <span>This may not be the address for ongoing deliveries.</span>
+                                </div>
+                                <div class="piv2-section-title">Billing address</div>
+                                <div class="piv2-addr-row">
+                                    <div class="piv2-addr-text">Calle 34Z Sur #99S-00
+Bogotá, D.C., 110011, Colombia</div>
+                                    <button type="button" class="piv2-icon-btn piv2-icon-btn--muted" title="History" aria-label="Billing address history">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 3v5h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </button>
+                                </div>
+                                <div style="margin-top: 6px;">
+                                    <button type="button" class="piv2-icon-btn" title="Copy" aria-label="Copy billing address" data-piv2-copy="Calle 34Z Sur #99S-00, Bogotá, D.C., 110011, Colombia" onclick="piv2Copy(this, event)">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </button>
+                                </div>
+                                <div class="piv2-section-title" style="border-top: 1px solid #ececec; margin-top: 14px;">Tax Country</div>
+                                <div class="piv2-field" style="border-bottom: none; padding-top: 4px;">
+                                    <span class="piv2-field-value">Colombia</span>
+                                </div>
+                            </div>
+                            <!-- Devices panel -->
+                            <div class="piv2-panel" id="piv2PanelDevices" role="tabpanel">
+                                <div class="piv2-section-title" style="padding-top: 4px;">Primary device</div>
+                                <div class="piv2-field-value" style="line-height: 1.45;">Android/9.43.3-1000114983 (38499077b88d2cfa; 16; samsung; SM-S921B)</div>
+                                <div style="margin-top: 6px;">
+                                    <button type="button" class="piv2-icon-btn" title="Copy" aria-label="Copy primary device" data-piv2-copy="Android/9.43.3-1000114983 (38499077b88d2cfa; 16; samsung; SM-S921B)" onclick="piv2Copy(this, event)">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </button>
+                                </div>
+                                <button type="button" class="piv2-other-toggle" aria-expanded="false" onclick="piv2ToggleOtherDevices(this)">
+                                    <span>Other devices</span>
+                                    <span class="piv2-chev" aria-hidden="true">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </span>
+                                </button>
+                                <div class="piv2-other-list">
+                                    <div class="piv2-other-item" style="color: #888;">No other devices found.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="piv2-footer">
+                            <div class="piv2-footer-left">
+                                <button type="button" class="piv2-icon-btn piv2-icon-btn--muted widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '.piv2-body', event)">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                                </button>
+                                <span class="piv2-foot-label">Core Identity</span>
+                                <button type="button" class="piv2-icon-btn piv2-icon-btn--muted" title="Bug" aria-label="Bug">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><ellipse cx="12" cy="13" rx="6.5" ry="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M12 5v3M9.5 8h5M6.5 16l-2.5 2M17.5 16l2.5 2M5.5 12H3M18.5 12H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="7" r="2.25" stroke="currentColor" stroke-width="1.5"/></svg>
+                                </button>
+                            </div>
+                            <div class="piv2-footer-right">
+                                <span class="piv2-foot-label">Rate this widget</span>
+                                <button type="button" class="piv2-icon-btn piv2-icon-btn--muted" title="Like" aria-label="Thumbs up">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </button>
+                                <button type="button" class="piv2-icon-btn piv2-icon-btn--muted" title="Dislike" aria-label="Thumbs down">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prospects Widget -->
+                <div class="widget" id="prospectsWidget">
+                    <div class="widget-header" onclick="toggleWidget('prospectsWidget')">
+                        <h2 class="widget-title">Prospects</h2>
+                        <div class="header-right">
+                            <div class="menu-icon" onclick="event.stopPropagation(); toggleWidgetMenu(event);">⋮</div>
+                            <div class="collapse-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 5.25L7 8.75L10.5 5.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="widget-content" id="prospectsContent">
+                        <div class="pros-filters">
+                            <select class="pros-filter" aria-label="Channel filter">
+                                <option selected>All Channels</option>
+                            </select>
+                            <select class="pros-filter" aria-label="Stage filter">
+                                <option selected>All stages</option>
+                                <option>Active</option>
+                                <option>Expired</option>
+                            </select>
+                        </div>
+                        <div class="pros-list">
+                            <div class="pros-row">
+                                <div class="pros-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleProsItem(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleProsItem(this);}">
+                                    <span class="pros-chev" aria-hidden="true">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </span>
+                                    <div class="pros-info">
+                                        <span class="pros-meta">24/08/24 01:49<span class="pros-meta-sep">••</span>Active</span>
+                                        <span class="pros-email">martha.gomez.tst@mail.co</span>
+                                    </div>
+                                </div>
+                                <div class="pros-details" hidden>
+                                    <div class="pros-details-grid">
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">ETAPA</div>
+                                            <div class="pros-detail-value">Active</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">NEGADO EN</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">FECHA DE APLICACIÓN</div>
+                                            <div class="pros-detail-value">24/08/24 01:49</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">ESPERANDO DESDE</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">ARCHIVADO EN</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">DESISTIMIENTO EN</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">E-MAIL</div>
+                                            <div class="pros-detail-value">martha.gomez.tst@mail.co</div>
+                                        </div>
+                                    </div>
+                                    <div class="pros-detail-id-block">
+                                        <div class="pros-detail-label">ID DE PROSPECCION</div>
+                                        <div class="pros-detail-id-value">66c93c17-b72e-44b6-802e-d49897abc1d3</div>
+                                    </div>
+                                    <div>
+                                        <div class="pros-collapsible-wrap">
+                                            <button type="button" class="pros-collapsible" aria-expanded="false" onclick="toggleProsCollapsible(this)">
+                                                <span class="pros-collapsible-chev" aria-hidden="true">
+                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                </span>
+                                                <span>Offers</span>
+                                            </button>
+                                            <div class="pros-collapsible-body" hidden>
+                                                <div class="pros-collapsible-body-divider" aria-hidden="true"></div>
+                                                <div class="pros-no-offers">No offers found</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pros-row">
+                                <div class="pros-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleProsItem(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleProsItem(this);}">
+                                    <span class="pros-chev" aria-hidden="true">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </span>
+                                    <div class="pros-info">
+                                        <span class="pros-meta">20/08/24 16:11<span class="pros-meta-sep">••</span>Active</span>
+                                        <span class="pros-email">martha.gomez.tst@mail.co</span>
+                                    </div>
+                                </div>
+                                <div class="pros-details" hidden>
+                                    <div class="pros-details-grid">
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">ETAPA</div>
+                                            <div class="pros-detail-value">Active</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">NEGADO EN</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">FECHA DE APLICACIÓN</div>
+                                            <div class="pros-detail-value">20/08/24 16:11</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">ESPERANDO DESDE</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">ARCHIVADO EN</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">DESISTIMIENTO EN</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">E-MAIL</div>
+                                            <div class="pros-detail-value">martha.gomez.tst@mail.co</div>
+                                        </div>
+                                    </div>
+                                    <div class="pros-detail-id-block">
+                                        <div class="pros-detail-label">ID DE PROSPECCION</div>
+                                        <div class="pros-detail-id-value">7a31b04c-9f5e-43d2-b691-c8217ab40e57</div>
+                                    </div>
+                                    <div>
+                                        <div class="pros-collapsible-wrap">
+                                            <button type="button" class="pros-collapsible" aria-expanded="false" onclick="toggleProsCollapsible(this)">
+                                                <span class="pros-collapsible-chev" aria-hidden="true">
+                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                </span>
+                                                <span>Offers</span>
+                                            </button>
+                                            <div class="pros-collapsible-body" hidden>
+                                                <div class="pros-collapsible-body-divider" aria-hidden="true"></div>
+                                                <div class="pros-offer-grid">
+                                                    <div>
+                                                        <div class="pros-detail-label">SKU</div>
+                                                        <div class="pros-detail-value">co-savings-nucuenta</div>
+                                                    </div>
+                                                    <div><span class="pros-status-badge pros-status-badge--expired">EXPIRED</span></div>
+                                                </div>
+                                                <div class="pros-offer-extra">
+                                                    <div class="pros-detail-label">EXPIRATION DATE</div>
+                                                    <div class="pros-detail-value">04/10/24 11:11</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pros-row">
+                                <div class="pros-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleProsItem(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleProsItem(this);}">
+                                    <span class="pros-chev" aria-hidden="true">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </span>
+                                    <div class="pros-info">
+                                        <span class="pros-meta">01/10/24 03:40<span class="pros-meta-sep">••</span></span>
+                                        <span class="pros-email">martha.gomez.tst@mail.co</span>
+                                    </div>
+                                </div>
+                                <div class="pros-details" hidden>
+                                    <div class="pros-details-grid">
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">ETAPA</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">NEGADO EN</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">FECHA DE APLICACIÓN</div>
+                                            <div class="pros-detail-value">01/10/24 03:40</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">ESPERANDO DESDE</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">ARCHIVADO EN</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">DESISTIMIENTO EN</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">E-MAIL</div>
+                                            <div class="pros-detail-value">martha.gomez.tst@mail.co</div>
+                                        </div>
+                                    </div>
+                                    <div class="pros-detail-id-block">
+                                        <div class="pros-detail-label">ID DE PROSPECCION</div>
+                                        <div class="pros-detail-id-value">66fb6f3e-a5ea-4efb-88d9-3a6e07b2c145</div>
+                                    </div>
+                                    <div>
+                                        <div class="pros-collapsible-wrap">
+                                            <button type="button" class="pros-collapsible" aria-expanded="false" onclick="toggleProsCollapsible(this)">
+                                                <span class="pros-collapsible-chev" aria-hidden="true">
+                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                </span>
+                                                <span>Pedidos De Cuenta</span>
+                                            </button>
+                                            <div class="pros-collapsible-body" hidden>
+                                                <div class="pros-collapsible-body-divider" aria-hidden="true"></div>
+                                                <div class="pros-order-item">
+                                                    <button type="button" class="pros-order-head" aria-expanded="true" onclick="toggleProsCollapsible(this)">
+                                                        <div class="pros-order-head-text">
+                                                            <div class="pros-order-meta">01/10/24 03:41<span class="pros-order-meta-sep">•</span>RELEASED</div>
+                                                            <div class="pros-order-name">Tarjeta de Crédito</div>
+                                                        </div>
+                                                        <span class="pros-order-chev" aria-hidden="true">
+                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                        </span>
+                                                    </button>
+                                                    <div class="pros-order-body">
+                                                        <div class="pros-order-grid">
+                                                            <div>
+                                                                <div class="pros-detail-label">APPLICATION DATE</div>
+                                                                <div class="pros-detail-value">01/10/24 03:41</div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="pros-detail-label">STATUS</div>
+                                                                <div class="pros-detail-value">Released</div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="pros-detail-label">CREDIT LIMIT</div>
+                                                                <div class="pros-detail-value">$ 600.000.000,00</div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="pros-detail-label">MINIMUM LIMIT</div>
+                                                                <div class="pros-detail-value">$ 5.000.000,00</div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="pros-detail-label">MAXIMUM LIMIT</div>
+                                                                <div class="pros-detail-value">$ 600.000.000,00</div>
+                                                            </div>
+                                                            <div></div>
+                                                            <div>
+                                                                <div class="pros-detail-label">CONFIRMED AT</div>
+                                                                <div class="pros-detail-value">01/10/24 15:38</div>
+                                                            </div>
+                                                            <div></div>
+                                                            <div>
+                                                                <div class="pros-detail-label">WAITING SINCE</div>
+                                                                <div class="pros-detail-value">01/10/24 15:38</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pros-order-ids">
+                                                            <div>
+                                                                <div class="pros-detail-label">REQUEST ID</div>
+                                                                <div class="pros-detail-id-value">66fb6f71-a026-4163-9c85-f707643564db</div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="pros-detail-label">PRODUCT ID</div>
+                                                                <div class="pros-detail-id-value">4547180a-1f14-426f-b5cd-d5d5bed6f939</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pros-collapsible-wrap">
+                                            <button type="button" class="pros-collapsible" aria-expanded="false" onclick="toggleProsCollapsible(this)">
+                                                <span class="pros-collapsible-chev" aria-hidden="true">
+                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                </span>
+                                                <span>Offers</span>
+                                            </button>
+                                            <div class="pros-collapsible-body" hidden>
+                                                <div class="pros-collapsible-body-divider" aria-hidden="true"></div>
+                                                <div class="pros-offer-grid">
+                                                    <div>
+                                                        <div class="pros-detail-label">SKU</div>
+                                                        <div class="pros-detail-value">co-credit-card-moradita-cross-sell</div>
+                                                    </div>
+                                                    <div><span class="pros-status-badge pros-status-badge--ordered">ORDERED</span></div>
+                                                </div>
+                                                <div class="pros-offer-extra">
+                                                    <div class="pros-detail-label">EXPIRATION DATE</div>
+                                                    <div class="pros-detail-value">14/11/24 22:41</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pros-row">
+                                <div class="pros-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleProsItem(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleProsItem(this);}">
+                                    <span class="pros-chev" aria-hidden="true">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </span>
+                                    <div class="pros-info">
+                                        <span class="pros-meta">21/09/22 16:41<span class="pros-meta-sep">••</span>Expired</span>
+                                        <span class="pros-email">martha.gomez.tst@mail.co</span>
+                                    </div>
+                                </div>
+                                <div class="pros-details" hidden>
+                                    <div class="pros-details-grid">
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">ETAPA</div>
+                                            <div class="pros-detail-value">Expired</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">NEGADO EN</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">FECHA DE APLICACIÓN</div>
+                                            <div class="pros-detail-value">21/09/22 16:41</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">ESPERANDO DESDE</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">ARCHIVADO EN</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">DESISTIMIENTO EN</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">E-MAIL</div>
+                                            <div class="pros-detail-value">martha.gomez.tst@mail.co</div>
+                                        </div>
+                                    </div>
+                                    <div class="pros-detail-id-block">
+                                        <div class="pros-detail-label">ID DE PROSPECCION</div>
+                                        <div class="pros-detail-id-value">632b3eaf-2809-470d-9bfd-a15938ef7d12</div>
+                                    </div>
+                                    <div>
+                                        <div class="pros-collapsible-wrap">
+                                            <button type="button" class="pros-collapsible" aria-expanded="false" onclick="toggleProsCollapsible(this)">
+                                                <span class="pros-collapsible-chev" aria-hidden="true">
+                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                </span>
+                                                <span>Pedidos De Cuenta</span>
+                                            </button>
+                                            <div class="pros-collapsible-body" hidden>
+                                                <div class="pros-collapsible-body-divider" aria-hidden="true"></div>
+                                                <div class="pros-order-item">
+                                                    <button type="button" class="pros-order-head" aria-expanded="true" onclick="toggleProsCollapsible(this)">
+                                                        <div class="pros-order-head-text">
+                                                            <div class="pros-order-meta">21/09/22 16:41<span class="pros-order-meta-sep">•</span>EXPIRED</div>
+                                                            <div class="pros-order-name">Tarjeta de Crédito</div>
+                                                        </div>
+                                                        <span class="pros-order-chev" aria-hidden="true">
+                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                        </span>
+                                                    </button>
+                                                    <div class="pros-order-body">
+                                                        <div class="pros-order-grid">
+                                                            <div>
+                                                                <div class="pros-detail-label">APPLICATION DATE</div>
+                                                                <div class="pros-detail-value">21/09/22 16:41</div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="pros-detail-label">STATUS</div>
+                                                                <div class="pros-detail-value">Expired</div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="pros-detail-label">CREDIT LIMIT</div>
+                                                                <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="pros-detail-label">MINIMUM LIMIT</div>
+                                                                <div class="pros-detail-value">$ 10.000.000,00</div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="pros-detail-label">MAXIMUM LIMIT</div>
+                                                                <div class="pros-detail-value">$ 30.000.000,00</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pros-order-ids">
+                                                            <div>
+                                                                <div class="pros-detail-label">REQUEST ID</div>
+                                                                <div class="pros-detail-id-value">632b3ecf-51c4-43fa-88c9-055a8ea31942</div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="pros-detail-label">PRODUCT ID</div>
+                                                                <div class="pros-detail-id-value">4547180a-1f14-426f-b5cd-d5d5bed6f939</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pros-collapsible-wrap">
+                                            <button type="button" class="pros-collapsible" aria-expanded="false" onclick="toggleProsCollapsible(this)">
+                                                <span class="pros-collapsible-chev" aria-hidden="true">
+                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                </span>
+                                                <span>Offers</span>
+                                            </button>
+                                            <div class="pros-collapsible-body" hidden>
+                                                <div class="pros-collapsible-body-divider" aria-hidden="true"></div>
+                                                <div class="pros-no-offers">No offers found</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pros-row">
+                                <div class="pros-item" role="button" tabindex="0" aria-expanded="false" onclick="toggleProsItem(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleProsItem(this);}">
+                                    <span class="pros-chev" aria-hidden="true">
+                                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    </span>
+                                    <div class="pros-info">
+                                        <span class="pros-meta">20/08/24 16:13<span class="pros-meta-sep">••</span></span>
+                                        <span class="pros-email">martha.gomez.tst@mail.co</span>
+                                    </div>
+                                </div>
+                                <div class="pros-details" hidden>
+                                    <div class="pros-details-grid">
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">ETAPA</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">NEGADO EN</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">FECHA DE APLICACIÓN</div>
+                                            <div class="pros-detail-value">20/08/24 16:13</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">ESPERANDO DESDE</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">ARCHIVADO EN</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">DESISTIMIENTO EN</div>
+                                            <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                        </div>
+                                        <div class="pros-detail">
+                                            <div class="pros-detail-label">E-MAIL</div>
+                                            <div class="pros-detail-value">martha.gomez.tst@mail.co</div>
+                                        </div>
+                                    </div>
+                                    <div class="pros-detail-id-block">
+                                        <div class="pros-detail-label">ID DE PROSPECCION</div>
+                                        <div class="pros-detail-id-value">b1a7d29e-4f81-4c6d-9a35-8d24f1ec5a90</div>
+                                    </div>
+                                    <div>
+                                        <div class="pros-collapsible-wrap">
+                                            <button type="button" class="pros-collapsible" aria-expanded="false" onclick="toggleProsCollapsible(this)">
+                                                <span class="pros-collapsible-chev" aria-hidden="true">
+                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                </span>
+                                                <span>Pedidos De Cuenta</span>
+                                            </button>
+                                            <div class="pros-collapsible-body" hidden>
+                                                <div class="pros-collapsible-body-divider" aria-hidden="true"></div>
+                                                <div class="pros-order-item">
+                                                    <button type="button" class="pros-order-head" aria-expanded="true" onclick="toggleProsCollapsible(this)">
+                                                        <div class="pros-order-head-text">
+                                                            <div class="pros-order-meta">20/08/24 16:18<span class="pros-order-meta-sep">•</span>RELEASED</div>
+                                                            <div class="pros-order-name">Cuenta de Ahorros</div>
+                                                        </div>
+                                                        <span class="pros-order-chev" aria-hidden="true">
+                                                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                        </span>
+                                                    </button>
+                                                    <div class="pros-order-body">
+                                                        <div class="pros-order-grid">
+                                                            <div>
+                                                                <div class="pros-detail-label">APPLICATION DATE</div>
+                                                                <div class="pros-detail-value">20/08/24 16:18</div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="pros-detail-label">STATUS</div>
+                                                                <div class="pros-detail-value">Released</div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="pros-detail-label">CREDIT LIMIT</div>
+                                                                <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="pros-detail-label">MINIMUM LIMIT</div>
+                                                                <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="pros-detail-label">MAXIMUM LIMIT</div>
+                                                                <div class="pros-detail-value pros-detail-value--muted">-</div>
+                                                            </div>
+                                                            <div></div>
+                                                            <div>
+                                                                <div class="pros-detail-label">CONFIRMED AT</div>
+                                                                <div class="pros-detail-value">20/08/24 21:49</div>
+                                                            </div>
+                                                            <div></div>
+                                                            <div>
+                                                                <div class="pros-detail-label">WAITING SINCE</div>
+                                                                <div class="pros-detail-value">20/08/24 21:50</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="pros-order-ids">
+                                                            <div>
+                                                                <div class="pros-detail-label">REQUEST ID</div>
+                                                                <div class="pros-detail-id-value">66c4c1bc-9a50-41c0-8e91-1427380fc970</div>
+                                                            </div>
+                                                            <div>
+                                                                <div class="pros-detail-label">PRODUCT ID</div>
+                                                                <div class="pros-detail-id-value">58d7c947-927f-402e-ad2a-c82dbd786c05</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="pros-collapsible-wrap">
+                                            <button type="button" class="pros-collapsible" aria-expanded="false" onclick="toggleProsCollapsible(this)">
+                                                <span class="pros-collapsible-chev" aria-hidden="true">
+                                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                                </span>
+                                                <span>Offers</span>
+                                            </button>
+                                            <div class="pros-collapsible-body" hidden>
+                                                <div class="pros-collapsible-body-divider" aria-hidden="true"></div>
+                                                <div class="pros-offer-grid">
+                                                    <div>
+                                                        <div class="pros-detail-label">SKU</div>
+                                                        <div class="pros-detail-value">co-savings-nucuenta</div>
+                                                    </div>
+                                                    <div><span class="pros-status-badge pros-status-badge--ordered">ORDERED</span></div>
+                                                </div>
+                                                <div class="pros-offer-extra">
+                                                    <div class="pros-detail-label">EXPIRATION DATE</div>
+                                                    <div class="pros-detail-value">04/10/24 11:13</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pros-footer">
+                            <div class="pros-footer-left">
+                                <button type="button" class="pros-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '.pros-list', event)">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                                </button>
+                                <span class="pros-foot-label">Acquisition</span>
+                                <button type="button" class="pros-icon-btn" title="Bug" aria-label="Bug">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><ellipse cx="12" cy="13" rx="6.5" ry="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M12 5v3M9.5 8h5M6.5 16l-2.5 2M17.5 16l2.5 2M5.5 12H3M18.5 12H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="7" r="2.25" stroke="currentColor" stroke-width="1.5"/></svg>
+                                </button>
+                            </div>
+                            <div class="pros-footer-right">
+                                <span class="pros-foot-label">Rate this widget</span>
+                                <button type="button" class="pros-icon-btn" title="Like" aria-label="Thumbs up">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </button>
+                                <button type="button" class="pros-icon-btn" title="Dislike" aria-label="Thumbs down">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Phone Numbers Widget -->
                 <div class="widget" id="phoneWidget">
                     <div class="widget-header" onclick="toggleWidget('phoneWidget')">
@@ -18365,18 +21194,120 @@
                         </div>
                     </div>
                     <div class="phone-header-section" id="phoneHeaderSection">
-                        <button class="add-phone-btn">Add Phone</button>
+                        <button class="add-phone-btn" type="button" onclick="togglePhoneAddForm()">Add Phone</button>
                     </div>
                     <div class="widget-content" id="phoneContent">
-                        <div class="phone-item">
-                            <span class="phone-number">(57) 30021-2445 5</span>
-                            <span class="phone-type">unclassified</span>
-                            <span class="phone-owner">customer</span>
+                        <div id="phoneList">
+                            <div class="phone-item">
+                                <span class="phone-number">(57) 30021-2445 5</span>
+                                <div class="phone-type-select">
+                                    <button type="button" class="phone-type-trigger" aria-haspopup="listbox" aria-expanded="false" data-current="unclassified" onclick="togglePhoneTypeRowMenu(this, event)">unclassified</button>
+                                </div>
+                                <span class="phone-owner">customer</span>
+                            </div>
+                        </div>
+                        <div class="phone-type-menu" id="phoneTypeMenuShared" role="listbox" aria-label="Phone type">
+                            <div class="phone-type-option" role="option" data-value="personal" onclick="selectPhoneTypeRow(this)">
+                                <span>personal</span>
+                                <span class="phone-type-option-check" aria-hidden="true">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                            </div>
+                            <div class="phone-type-option" role="option" data-value="family-and-friends" onclick="selectPhoneTypeRow(this)">
+                                <span>family-and-friends</span>
+                                <span class="phone-type-option-check" aria-hidden="true">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                            </div>
+                            <div class="phone-type-option" role="option" data-value="workplace" onclick="selectPhoneTypeRow(this)">
+                                <span>workplace</span>
+                                <span class="phone-type-option-check" aria-hidden="true">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                            </div>
+                            <div class="phone-type-option" role="option" data-value="wrong-owner" onclick="selectPhoneTypeRow(this)">
+                                <span>wrong-owner</span>
+                                <span class="phone-type-option-check" aria-hidden="true">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                            </div>
+                            <div class="phone-type-option" role="option" data-value="invalid" onclick="selectPhoneTypeRow(this)">
+                                <span>invalid</span>
+                                <span class="phone-type-option-check" aria-hidden="true">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                            </div>
+                            <div class="phone-type-option" role="option" data-value="unclassified" onclick="selectPhoneTypeRow(this)">
+                                <span>unclassified</span>
+                                <span class="phone-type-option-check" aria-hidden="true">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="phone-add-row" id="phoneAddRow" hidden>
+                            <input type="text" class="phone-add-number-input" id="phoneAddNumber" placeholder="" autocomplete="off" />
+                            <div class="phone-add-type">
+                                <button type="button" class="phone-add-type-trigger" id="phoneAddTypeTrigger" aria-haspopup="listbox" aria-expanded="false" onclick="togglePhoneTypeMenu(event)">
+                                    <span class="phone-add-type-trigger-text">personal</span>
+                                </button>
+                                <div class="phone-add-type-menu" id="phoneAddTypeMenu" role="listbox" aria-label="Phone type">
+                                    <div class="phone-add-type-option is-selected" role="option" data-value="personal" onclick="selectPhoneType(this)">
+                                        <span>personal</span>
+                                        <span class="phone-add-type-option-check" aria-hidden="true">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </span>
+                                    </div>
+                                    <div class="phone-add-type-option" role="option" data-value="family-and-friends" onclick="selectPhoneType(this)">
+                                        <span>family-and-friends</span>
+                                        <span class="phone-add-type-option-check" aria-hidden="true">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </span>
+                                    </div>
+                                    <div class="phone-add-type-option" role="option" data-value="workplace" onclick="selectPhoneType(this)">
+                                        <span>workplace</span>
+                                        <span class="phone-add-type-option-check" aria-hidden="true">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </span>
+                                    </div>
+                                    <div class="phone-add-type-option" role="option" data-value="wrong-owner" onclick="selectPhoneType(this)">
+                                        <span>wrong-owner</span>
+                                        <span class="phone-add-type-option-check" aria-hidden="true">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </span>
+                                    </div>
+                                    <div class="phone-add-type-option" role="option" data-value="invalid" onclick="selectPhoneType(this)">
+                                        <span>invalid</span>
+                                        <span class="phone-add-type-option-check" aria-hidden="true">
+                                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="phone-add-actions">
+                                <button type="button" class="phone-add-action-btn" title="Cancel" aria-label="Cancel" onclick="cancelPhoneAdd()">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                </button>
+                                <button type="button" class="phone-add-action-btn" title="Confirm" aria-label="Confirm" onclick="confirmPhoneAdd()">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 12l5 5L20 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="widget-footer-source" id="phoneFooter">
-                        <div class="phone-footer-visual" aria-hidden="true">
-                            <img src="images/phonenumbers.png" alt="" loading="lazy" decoding="async">
+                        <div class="phone-footer-left">
+                            <button type="button" class="phone-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#phoneContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="phone-footer-label">Growth CO</span>
+                        </div>
+                        <div class="phone-footer-right">
+                            <span class="phone-footer-label">Rate this widget</span>
+                            <button type="button" class="phone-footer-icon-btn" title="Like" aria-label="Thumbs up">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
+                            <button type="button" class="phone-footer-icon-btn" title="Dislike" aria-label="Thumbs down">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -18391,22 +21322,23 @@
                         </div>
                     </div>
                     <div class="date-filters" id="interactionFilters">
-                        <div class="date-field">
-                            <label class="date-label">Start date</label>
-                            <div class="date-input-wrap">
-                                <input type="text" id="interactionStartDate" class="date-input" placeholder="dd/mm/aaaa" autocomplete="off" />
-                                <button type="button" class="date-input-icon-btn interaction-date-open" data-date-target="interactionStartDate" aria-label="Abrir calendario">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                </button>
+                        <div class="date-filters-title">Select a period</div>
+                        <div class="date-filters-row">
+                            <div class="date-field">
+                                <div class="date-input-wrap">
+                                    <input type="text" id="interactionStartDate" class="date-input" placeholder="Start date" autocomplete="off" />
+                                    <button type="button" class="date-input-icon-btn interaction-date-open" data-date-target="interactionStartDate" aria-label="Abrir calendario">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="date-field">
-                            <label class="date-label">End date</label>
-                            <div class="date-input-wrap">
-                                <input type="text" id="interactionEndDate" class="date-input" placeholder="dd/mm/aaaa" autocomplete="off" />
-                                <button type="button" class="date-input-icon-btn interaction-date-open" data-date-target="interactionEndDate" aria-label="Abrir calendario">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-                                </button>
+                            <div class="date-field">
+                                <div class="date-input-wrap">
+                                    <input type="text" id="interactionEndDate" class="date-input" placeholder="End date" autocomplete="off" />
+                                    <button type="button" class="date-input-icon-btn interaction-date-open" data-date-target="interactionEndDate" aria-label="Abrir calendario">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -18418,18 +21350,63 @@
                     </div>
                     <div class="interactions-list" id="interactionsList">
                         <div class="year-separator">2026</div>
-                        <div class="interaction-item" data-interaction-channel="chat" data-interaction-date="2026-02-12" data-chat="savings" onclick="openSavingsChatModal()" role="button" tabindex="0" style="cursor: pointer;">
-                            <div class="interaction-time">02/12/2026 9:35 AM</div>
+                        <div class="interaction-item" data-interaction-channel="email" data-interaction-date="2026-03-21" data-interaction="email-cert" onclick="event.stopPropagation(); openCertificateEmailModal();" role="button" tabindex="0" style="cursor: pointer;" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();openCertificateEmailModal();}">
+                            <div class="interaction-time">03/21/2026 5:07 PM</div>
                             <div class="interaction-type">
-                                <span class="interaction-icon">💬</span>
+                                <span class="interaction-icon" aria-hidden="true">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span>Email</span>
+                            </div>
+                        </div>
+                        <div class="interaction-item" data-interaction-channel="chat" data-interaction-date="2026-04-29" data-chat="documents" onclick="event.stopPropagation(); openDocumentsChatModal();" role="button" tabindex="0" style="cursor: pointer;" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();openDocumentsChatModal();}">
+                            <div class="interaction-time">04/29/2026 9:54 AM</div>
+                            <div class="interaction-type">
+                                <span class="interaction-icon" aria-hidden="true">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-4 3v-3H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span>Chat - others.documents</span>
+                            </div>
+                            <div class="interaction-email">pepito.perez@nu.com.co <span class="copy-icon">📋</span></div>
+                        </div>
+                        <div class="interaction-item" data-interaction-channel="phone" data-interaction-date="2026-03-20">
+                            <div class="interaction-time">03/20/2026 1:01 PM</div>
+                            <div class="interaction-type">
+                                <span class="interaction-icon" aria-hidden="true">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 6 6L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                                </span>
+                                <span>Call - savings.others.virtual_card</span>
+                            </div>
+                            <div class="interaction-email">pepito.perez@nu.com.co <span class="copy-icon">📋</span></div>
+                            <div class="interaction-email">Case number: 00002582206 <span class="copy-icon">📋</span></div>
+                            <div class="interaction-email">Phone: +573115070655 <span class="copy-icon">📋</span></div>
+                        </div>
+                        <div class="interaction-item" data-interaction-channel="chat" data-interaction-date="2026-02-12" data-chat="savings" onclick="openSavingsChatModal()" role="button" tabindex="0" style="cursor: pointer;">
+                            <div class="interaction-time">02/12/2026 4:23 PM</div>
+                            <div class="interaction-type">
+                                <span class="interaction-icon" aria-hidden="true">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 5h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1h-9l-4 3v-3H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                                </span>
                                 <span>Chat - savings.account_cancellation</span>
                             </div>
                             <div class="interaction-email">pepito.perez@nu.com.co <span class="copy-icon">📋</span></div>
                         </div>
                     </div>
                     <div class="widget-footer-source" id="interactionFooter">
-                        <div class="interaction-footer-visual" aria-hidden="true">
-                            <img src="images/InteractionHistory.png" alt="" loading="lazy" decoding="async">
+                        <div class="interaction-footer-left">
+                            <button type="button" class="interaction-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#interactionsList', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="interaction-footer-label">CSP</span>
+                        </div>
+                        <div class="interaction-footer-right">
+                            <span class="interaction-footer-label">Rate this widget</span>
+                            <button type="button" class="interaction-footer-icon-btn" title="Like" aria-label="Thumbs up">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
+                            <button type="button" class="interaction-footer-icon-btn" title="Dislike" aria-label="Thumbs down">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -18451,8 +21428,20 @@
                         <div class="no-documents">No documents found</div>
                     </div>
                     <div class="widget-footer-source" id="documentsFooter">
-                        <div class="documents-footer-visual" aria-hidden="true">
-                            <img src="images/Documents.png" alt="" loading="lazy" decoding="async">
+                        <div class="documents-footer-left">
+                            <button type="button" class="documents-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#documentsContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="documents-footer-label">Acquisition</span>
+                        </div>
+                        <div class="documents-footer-right">
+                            <span class="documents-footer-label">Rate this widget</span>
+                            <button type="button" class="documents-footer-icon-btn" title="Like" aria-label="Thumbs up">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
+                            <button type="button" class="documents-footer-icon-btn" title="Dislike" aria-label="Thumbs down">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -37218,6 +40207,276 @@ Un abrazo, equipo Nu. 💜</div>
                 dragging = false;
             });
         })();
+
+        function piv2SwitchTab(btn) {
+            if (!btn) return;
+            var widget = btn.closest('#personInfoV2Widget');
+            if (!widget) return;
+            var targetId = btn.getAttribute('data-piv2-target');
+            var tabs = widget.querySelectorAll('.piv2-tab');
+            var panels = widget.querySelectorAll('.piv2-panel');
+            tabs.forEach(function (t) {
+                var active = t === btn;
+                t.classList.toggle('is-active', active);
+                t.setAttribute('aria-selected', active ? 'true' : 'false');
+            });
+            panels.forEach(function (p) {
+                p.classList.toggle('is-active', p.id === targetId);
+            });
+        }
+
+        function piv2ToggleOtherDevices(btn) {
+            if (!btn) return;
+            var open = btn.classList.toggle('is-open');
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+
+        function toggleProsItem(itemEl) {
+            if (!itemEl) return;
+            var row = itemEl.closest('.pros-row');
+            if (!row) return;
+            var details = row.querySelector('.pros-details');
+            if (!details) return;
+            var isOpen = !details.hasAttribute('hidden');
+            if (isOpen) {
+                details.setAttribute('hidden', '');
+                itemEl.setAttribute('aria-expanded', 'false');
+            } else {
+                details.removeAttribute('hidden');
+                itemEl.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+        function togglePhoneAddForm() {
+            var row = document.getElementById('phoneAddRow');
+            if (!row) return;
+            var willOpen = row.hasAttribute('hidden');
+            if (willOpen) {
+                row.removeAttribute('hidden');
+                var inp = document.getElementById('phoneAddNumber');
+                if (inp) {
+                    inp.value = '';
+                    setTimeout(function(){ inp.focus(); }, 0);
+                }
+            } else {
+                row.setAttribute('hidden', '');
+                closePhoneTypeMenu();
+            }
+        }
+
+        function cancelPhoneAdd() {
+            var row = document.getElementById('phoneAddRow');
+            if (!row) return;
+            row.setAttribute('hidden', '');
+            closePhoneTypeMenu();
+            var inp = document.getElementById('phoneAddNumber');
+            if (inp) inp.value = '';
+            resetPhoneTypeSelection();
+        }
+
+        function confirmPhoneAdd() {
+            var inp = document.getElementById('phoneAddNumber');
+            var trigger = document.getElementById('phoneAddTypeTrigger');
+            if (!inp || !trigger) return;
+            var raw = (inp.value || '').trim();
+            if (!raw) {
+                inp.focus();
+                return;
+            }
+            var typeText = (trigger.querySelector('.phone-add-type-trigger-text') || {}).textContent || 'personal';
+            var list = document.getElementById('phoneList');
+            if (!list) return;
+            var item = document.createElement('div');
+            item.className = 'phone-item';
+            var num = document.createElement('span');
+            num.className = 'phone-number';
+            num.textContent = raw;
+            var typeWrap = document.createElement('div');
+            typeWrap.className = 'phone-type-select';
+            var typeBtn = document.createElement('button');
+            typeBtn.type = 'button';
+            typeBtn.className = 'phone-type-trigger';
+            typeBtn.setAttribute('aria-haspopup', 'listbox');
+            typeBtn.setAttribute('aria-expanded', 'false');
+            typeBtn.setAttribute('data-current', typeText);
+            typeBtn.textContent = typeText;
+            typeBtn.onclick = function(ev) { togglePhoneTypeRowMenu(typeBtn, ev); };
+            typeWrap.appendChild(typeBtn);
+            var owner = document.createElement('span');
+            owner.className = 'phone-owner';
+            owner.textContent = 'customer';
+            item.appendChild(num);
+            item.appendChild(typeWrap);
+            item.appendChild(owner);
+            list.appendChild(item);
+            cancelPhoneAdd();
+        }
+
+        function togglePhoneTypeMenu(ev) {
+            if (ev) {
+                ev.preventDefault();
+                ev.stopPropagation();
+            }
+            var menu = document.getElementById('phoneAddTypeMenu');
+            var trigger = document.getElementById('phoneAddTypeTrigger');
+            if (!menu || !trigger) return;
+            var open = menu.classList.toggle('is-open');
+            trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+
+        function closePhoneTypeMenu() {
+            var menu = document.getElementById('phoneAddTypeMenu');
+            var trigger = document.getElementById('phoneAddTypeTrigger');
+            if (menu) menu.classList.remove('is-open');
+            if (trigger) trigger.setAttribute('aria-expanded', 'false');
+        }
+
+        function selectPhoneType(opt) {
+            if (!opt) return;
+            var menu = document.getElementById('phoneAddTypeMenu');
+            var trigger = document.getElementById('phoneAddTypeTrigger');
+            if (!menu || !trigger) return;
+            menu.querySelectorAll('.phone-add-type-option').forEach(function(o) {
+                o.classList.remove('is-selected');
+            });
+            opt.classList.add('is-selected');
+            var label = (opt.querySelector('span') || {}).textContent || '';
+            var triggerText = trigger.querySelector('.phone-add-type-trigger-text');
+            if (triggerText) triggerText.textContent = label;
+            closePhoneTypeMenu();
+        }
+
+        function resetPhoneTypeSelection() {
+            var menu = document.getElementById('phoneAddTypeMenu');
+            var trigger = document.getElementById('phoneAddTypeTrigger');
+            if (!menu || !trigger) return;
+            menu.querySelectorAll('.phone-add-type-option').forEach(function(o, idx) {
+                o.classList.toggle('is-selected', idx === 0);
+            });
+            var triggerText = trigger.querySelector('.phone-add-type-trigger-text');
+            if (triggerText) triggerText.textContent = 'personal';
+        }
+
+        document.addEventListener('click', function(ev) {
+            var menu = document.getElementById('phoneAddTypeMenu');
+            if (!menu || !menu.classList.contains('is-open')) return;
+            var wrap = menu.closest('.phone-add-type');
+            if (wrap && !wrap.contains(ev.target)) closePhoneTypeMenu();
+        });
+
+        var __activePhoneTypeTrigger = null;
+
+        function togglePhoneTypeRowMenu(triggerBtn, ev) {
+            if (ev) {
+                ev.preventDefault();
+                ev.stopPropagation();
+            }
+            if (!triggerBtn) return;
+            var menu = document.getElementById('phoneTypeMenuShared');
+            if (!menu) return;
+            var alreadyOpen = menu.classList.contains('is-open') && __activePhoneTypeTrigger === triggerBtn;
+            closePhoneTypeRowMenu();
+            if (alreadyOpen) return;
+            var current = triggerBtn.getAttribute('data-current') || (triggerBtn.textContent || '').trim();
+            menu.querySelectorAll('.phone-type-option').forEach(function(o) {
+                o.classList.toggle('is-selected', o.getAttribute('data-value') === current);
+            });
+            menu.classList.add('is-open');
+            triggerBtn.setAttribute('aria-expanded', 'true');
+            __activePhoneTypeTrigger = triggerBtn;
+            positionPhoneTypeRowMenu();
+        }
+
+        function positionPhoneTypeRowMenu() {
+            var menu = document.getElementById('phoneTypeMenuShared');
+            var trigger = __activePhoneTypeTrigger;
+            if (!menu || !trigger) return;
+            var rect = trigger.getBoundingClientRect();
+            var top = rect.bottom + 6;
+            var left = rect.left;
+            var menuWidth = Math.max(170, rect.width);
+            var maxLeft = window.innerWidth - menuWidth - 8;
+            if (left > maxLeft) left = Math.max(8, maxLeft);
+            menu.style.top = top + 'px';
+            menu.style.left = left + 'px';
+            menu.style.minWidth = menuWidth + 'px';
+        }
+
+        function closePhoneTypeRowMenu() {
+            var menu = document.getElementById('phoneTypeMenuShared');
+            if (!menu) return;
+            menu.classList.remove('is-open');
+            if (__activePhoneTypeTrigger) {
+                __activePhoneTypeTrigger.setAttribute('aria-expanded', 'false');
+                __activePhoneTypeTrigger = null;
+            }
+        }
+
+        function selectPhoneTypeRow(opt) {
+            if (!opt || !__activePhoneTypeTrigger) return;
+            var value = opt.getAttribute('data-value') || (opt.textContent || '').trim();
+            __activePhoneTypeTrigger.textContent = value;
+            __activePhoneTypeTrigger.setAttribute('data-current', value);
+            closePhoneTypeRowMenu();
+        }
+
+        document.addEventListener('click', function(ev) {
+            var menu = document.getElementById('phoneTypeMenuShared');
+            if (!menu || !menu.classList.contains('is-open')) return;
+            if (menu.contains(ev.target)) return;
+            if (__activePhoneTypeTrigger && __activePhoneTypeTrigger.contains(ev.target)) return;
+            closePhoneTypeRowMenu();
+        });
+
+        window.addEventListener('scroll', function() {
+            if (__activePhoneTypeTrigger) positionPhoneTypeRowMenu();
+        }, true);
+        window.addEventListener('resize', function() {
+            if (__activePhoneTypeTrigger) positionPhoneTypeRowMenu();
+        });
+
+        function toggleProsCollapsible(btn) {
+            if (!btn) return;
+            var expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            var body = btn.nextElementSibling;
+            while (body && !(body.classList && (body.classList.contains('pros-collapsible-body') || body.classList.contains('pros-order-body')))) {
+                body = body.nextElementSibling;
+            }
+            if (body) {
+                if (expanded) body.setAttribute('hidden', '');
+                else body.removeAttribute('hidden');
+            }
+        }
+
+        function piv2Copy(btn, ev) {
+            if (ev) {
+                ev.preventDefault();
+                ev.stopPropagation();
+            }
+            if (!btn) return;
+            var value = btn.getAttribute('data-piv2-copy') || '';
+            value = value.replace(/\s+/g, ' ').trim();
+            if (!value) return;
+            function done() {
+                if (typeof showFieldCopiedPill === 'function') {
+                    showFieldCopiedPill(btn, value, { mini: true });
+                }
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(value).then(done).catch(function () {
+                    if (typeof fallbackCopyAndShow === 'function') {
+                        fallbackCopyAndShow(value, btn);
+                    } else {
+                        done();
+                    }
+                });
+            } else if (typeof fallbackCopyAndShow === 'function') {
+                fallbackCopyAndShow(value, btn);
+            } else {
+                done();
+            }
+        }
 
         // Refresh genérico para footers estandarizados (muestra spinner 2s y restaura)
         function widgetReload(btn, contentSelector, ev) {
