@@ -3670,7 +3670,7 @@
             user-select: none;
         }
 
-        #cardsFooter.widget-footer-source {
+        #cardsFooter.widget-footer-source:not(.std-widget-footer) {
             padding: 0;
             min-height: 0;
             flex-direction: column;
@@ -6739,19 +6739,19 @@
             word-break: break-all;
         }
 
-        #quotasFooter.widget-footer-source,
-        #tokenizationsFooter.widget-footer-source,
-        #accountFooter.widget-footer-source,
-        #abuFooter.widget-footer-source,
-        #fraudCheckFooter.widget-footer-source,
-        #adjustmentsFooter.widget-footer-source,
-        #accountRequestFooter.widget-footer-source,
-        #certificatesFooter.widget-footer-source,
-        #pinFooter.widget-footer-source,
-        #appLoginFooter.widget-footer-source,
-        #csiFooter.widget-footer-source,
-        #challengePlatformFooter.widget-footer-source,
-        #blocksFooter.widget-footer-source {
+        #quotasFooter.widget-footer-source:not(.std-widget-footer),
+        #tokenizationsFooter.widget-footer-source:not(.std-widget-footer),
+        #accountFooter.widget-footer-source:not(.std-widget-footer),
+        #abuFooter.widget-footer-source:not(.std-widget-footer),
+        #fraudCheckFooter.widget-footer-source:not(.std-widget-footer),
+        #adjustmentsFooter.widget-footer-source:not(.std-widget-footer),
+        #accountRequestFooter.widget-footer-source:not(.std-widget-footer),
+        #certificatesFooter.widget-footer-source:not(.std-widget-footer),
+        #pinFooter.widget-footer-source:not(.std-widget-footer),
+        #appLoginFooter.widget-footer-source:not(.std-widget-footer),
+        #csiFooter.widget-footer-source:not(.std-widget-footer),
+        #challengePlatformFooter.widget-footer-source:not(.std-widget-footer),
+        #blocksFooter.widget-footer-source:not(.std-widget-footer) {
             padding: 0;
             min-height: 0;
             border-top: none;
@@ -13892,8 +13892,8 @@
         }
 
         /* Pie del widget Bills: Bills.png (mismo patrón que Cards) */
-        #billsFooter.widget-footer-source,
-        #billsFooter2.widget-footer-source {
+        #billsFooter.widget-footer-source:not(.std-widget-footer),
+        #billsFooter2.widget-footer-source:not(.std-widget-footer) {
             padding: 0;
             min-height: 0;
             border-top: none;
@@ -14646,6 +14646,216 @@
 
         #debitPurchasesWidget1 .debit-pw1-filter:hover {
             background: #f5f5f5;
+        }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        /* Filter by... modal (Bills widget) */
+        #billsFilterByModal.modal-overlay {
+            z-index: 10100;
+            padding: 16px;
+            overflow: visible;
+        }
+
+        #billsFilterByModal .bfm-box {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+            width: 100%;
+            max-width: 560px;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        #billsFilterByModal .bfm-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 22px 14px;
+            border-bottom: 1px solid #ECECEC;
+            flex: 0 0 auto;
+        }
+
+        #billsFilterByModal .bfm-header-icon {
+            display: inline-flex;
+            color: #111;
+        }
+
+        #billsFilterByModal .bfm-title {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: #111;
+            letter-spacing: 0.2px;
+        }
+
+        #billsFilterByModal .bfm-body {
+            padding: 4px 22px 4px;
+            overflow-y: auto;
+            flex: 1 1 auto;
+        }
+
+        #billsFilterByModal .bfm-section {
+            border-bottom: 1px solid #ECECEC;
+            padding: 14px 0 16px;
+        }
+
+        #billsFilterByModal .bfm-section:last-of-type {
+            border-bottom: none;
+        }
+
+        #billsFilterByModal .bfm-section-head {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: none;
+            border: none;
+            padding: 0;
+            margin: 0 0 12px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            color: #111;
+        }
+
+        #billsFilterByModal .bfm-section-arrow {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid #111;
+            transition: transform 0.15s ease;
+        }
+
+        #billsFilterByModal .bfm-section[data-collapsed="true"] .bfm-section-arrow {
+            transform: rotate(-90deg);
+        }
+
+        #billsFilterByModal .bfm-section[data-collapsed="true"] .bfm-section-content {
+            display: none;
+        }
+
+        #billsFilterByModal .bfm-check-all {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 2px 0 12px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 700;
+            color: #111;
+            user-select: none;
+        }
+
+        #billsFilterByModal .bfm-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 16px;
+            padding-left: 26px;
+        }
+
+        #billsFilterByModal .bfm-option {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 13px;
+            color: #1F1F1F;
+            user-select: none;
+            line-height: 1.3;
+        }
+
+        #billsFilterByModal input[type="checkbox"].bfm-cb {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            border: 1.5px solid #7C4DBC;
+            border-radius: 3px;
+            background: #fff;
+            cursor: pointer;
+            position: relative;
+            flex: 0 0 16px;
+            margin: 0;
+        }
+
+        #billsFilterByModal input[type="checkbox"].bfm-cb:checked {
+            background: #7C4DBC;
+            border-color: #7C4DBC;
+        }
+
+        #billsFilterByModal input[type="checkbox"].bfm-cb:checked::after {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 1px;
+            width: 4px;
+            height: 9px;
+            border: solid #fff;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        #billsFilterByModal .bfm-footer {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 22px 16px;
+            border-top: 1px solid #ECECEC;
+            flex: 0 0 auto;
+        }
+
+        #billsFilterByModal .bfm-btn {
+            border-radius: 6px;
+            padding: 10px 18px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            border: 1.5px solid transparent;
+            background: #fff;
+            color: #111;
+            line-height: 1.2;
+        }
+
+        #billsFilterByModal .bfm-btn--apply {
+            background: #7C4DBC;
+            color: #fff;
+            border-color: #7C4DBC;
+        }
+
+        #billsFilterByModal .bfm-btn--apply:disabled {
+            background: #ECECEC;
+            color: #999;
+            border-color: #ECECEC;
+            cursor: not-allowed;
+        }
+
+        #billsFilterByModal .bfm-btn--reset {
+            background: #fff;
+            color: #7C4DBC;
+            border-color: #7C4DBC;
+        }
+
+        #billsFilterByModal .bfm-btn--reset:hover {
+            background: #F4EFFA;
         }
 
         /* More Filters modal (Debit Purchases widget) */
@@ -18085,19 +18295,94 @@
             color: #7C4DBC;
         }
 
-        /* Variante compacta para footers en columnas angostas (Fraud) */
-        #fraudFooter.std-widget-footer {
+        /* Variante compacta para footers en columnas angostas */
+        #fraudFooter.std-widget-footer,
+        #quotasFooter.std-widget-footer,
+        #tokenizationsFooter.std-widget-footer,
+        #pinFooter.std-widget-footer,
+        #challengePlatformFooter.std-widget-footer,
+        #blocksFooter.std-widget-footer,
+        #moneyBoxesFooter.std-widget-footer,
+        #prometheusFooter.std-widget-footer,
+        #cuentaTransactionsFooter.std-widget-footer,
+        #rolloutsFooter.std-widget-footer,
+        #contestationHistoryFooter.std-widget-footer,
+        #collisionsFooter.std-widget-footer,
+        #cashbackSummaryFooter.std-widget-footer,
+        #cashbacksFooter.std-widget-footer,
+        #nubankAccountFooter.std-widget-footer,
+        #logisticTrackingFooter.std-widget-footer {
             padding: 8px 10px;
             gap: 6px;
         }
         #fraudFooter.std-widget-footer .std-footer-left,
-        #fraudFooter.std-widget-footer .std-footer-right {
+        #fraudFooter.std-widget-footer .std-footer-right,
+        #quotasFooter.std-widget-footer .std-footer-left,
+        #quotasFooter.std-widget-footer .std-footer-right,
+        #tokenizationsFooter.std-widget-footer .std-footer-left,
+        #tokenizationsFooter.std-widget-footer .std-footer-right,
+        #pinFooter.std-widget-footer .std-footer-left,
+        #pinFooter.std-widget-footer .std-footer-right,
+        #challengePlatformFooter.std-widget-footer .std-footer-left,
+        #challengePlatformFooter.std-widget-footer .std-footer-right,
+        #blocksFooter.std-widget-footer .std-footer-left,
+        #blocksFooter.std-widget-footer .std-footer-right,
+        #moneyBoxesFooter.std-widget-footer .std-footer-left,
+        #moneyBoxesFooter.std-widget-footer .std-footer-right,
+        #prometheusFooter.std-widget-footer .std-footer-left,
+        #prometheusFooter.std-widget-footer .std-footer-right,
+        #cuentaTransactionsFooter.std-widget-footer .std-footer-left,
+        #cuentaTransactionsFooter.std-widget-footer .std-footer-right,
+        #rolloutsFooter.std-widget-footer .std-footer-left,
+        #rolloutsFooter.std-widget-footer .std-footer-right,
+        #contestationHistoryFooter.std-widget-footer .std-footer-left,
+        #contestationHistoryFooter.std-widget-footer .std-footer-right,
+        #collisionsFooter.std-widget-footer .std-footer-left,
+        #collisionsFooter.std-widget-footer .std-footer-right,
+        #cashbackSummaryFooter.std-widget-footer .std-footer-left,
+        #cashbackSummaryFooter.std-widget-footer .std-footer-right,
+        #cashbacksFooter.std-widget-footer .std-footer-left,
+        #cashbacksFooter.std-widget-footer .std-footer-right,
+        #nubankAccountFooter.std-widget-footer .std-footer-left,
+        #nubankAccountFooter.std-widget-footer .std-footer-right,
+        #logisticTrackingFooter.std-widget-footer .std-footer-left,
+        #logisticTrackingFooter.std-widget-footer .std-footer-right {
             gap: 5px;
         }
-        #fraudFooter.std-widget-footer .std-footer-label {
+        #fraudFooter.std-widget-footer .std-footer-label,
+        #quotasFooter.std-widget-footer .std-footer-label,
+        #tokenizationsFooter.std-widget-footer .std-footer-label,
+        #pinFooter.std-widget-footer .std-footer-label,
+        #challengePlatformFooter.std-widget-footer .std-footer-label,
+        #blocksFooter.std-widget-footer .std-footer-label,
+        #moneyBoxesFooter.std-widget-footer .std-footer-label,
+        #prometheusFooter.std-widget-footer .std-footer-label,
+        #cuentaTransactionsFooter.std-widget-footer .std-footer-label,
+        #rolloutsFooter.std-widget-footer .std-footer-label,
+        #contestationHistoryFooter.std-widget-footer .std-footer-label,
+        #collisionsFooter.std-widget-footer .std-footer-label,
+        #cashbackSummaryFooter.std-widget-footer .std-footer-label,
+        #cashbacksFooter.std-widget-footer .std-footer-label,
+        #nubankAccountFooter.std-widget-footer .std-footer-label,
+        #logisticTrackingFooter.std-widget-footer .std-footer-label {
             font-size: 10px;
         }
-        #fraudFooter.std-widget-footer .std-footer-icon-btn svg {
+        #fraudFooter.std-widget-footer .std-footer-icon-btn svg,
+        #quotasFooter.std-widget-footer .std-footer-icon-btn svg,
+        #tokenizationsFooter.std-widget-footer .std-footer-icon-btn svg,
+        #pinFooter.std-widget-footer .std-footer-icon-btn svg,
+        #challengePlatformFooter.std-widget-footer .std-footer-icon-btn svg,
+        #blocksFooter.std-widget-footer .std-footer-icon-btn svg,
+        #moneyBoxesFooter.std-widget-footer .std-footer-icon-btn svg,
+        #prometheusFooter.std-widget-footer .std-footer-icon-btn svg,
+        #cuentaTransactionsFooter.std-widget-footer .std-footer-icon-btn svg,
+        #rolloutsFooter.std-widget-footer .std-footer-icon-btn svg,
+        #contestationHistoryFooter.std-widget-footer .std-footer-icon-btn svg,
+        #collisionsFooter.std-widget-footer .std-footer-icon-btn svg,
+        #cashbackSummaryFooter.std-widget-footer .std-footer-icon-btn svg,
+        #cashbacksFooter.std-widget-footer .std-footer-icon-btn svg,
+        #nubankAccountFooter.std-widget-footer .std-footer-icon-btn svg,
+        #logisticTrackingFooter.std-widget-footer .std-footer-icon-btn svg {
             width: 13px;
             height: 13px;
         }
@@ -20134,6 +20419,183 @@
             color: #7C4DBC;
         }
 
+        /* Logistic Tracking Widget */
+        #logisticTrackingContent {
+            padding: 12px 14px 14px;
+            background: #fff;
+        }
+        .lt-package-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            background: #ECECEC;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 12px;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+            font-family: inherit;
+            transition: background 0.15s ease;
+        }
+        .lt-package-row:hover {
+            background: #E2E2E2;
+        }
+        .lt-package-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            min-width: 0;
+        }
+        .lt-package-label {
+            font-size: 13px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+        .lt-status-pill {
+            display: inline-flex;
+            align-items: center;
+            color: #555;
+            font-size: 12px;
+            font-weight: 400;
+            white-space: nowrap;
+        }
+        .lt-chevron {
+            color: #555;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+        .lt-package-row[aria-expanded="true"] .lt-chevron {
+            transform: rotate(90deg);
+        }
+        .lt-detail {
+            padding: 14px 4px 4px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .lt-detail[hidden] {
+            display: none;
+        }
+        .lt-detail-field {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            min-width: 0;
+        }
+        .lt-detail-label {
+            font-size: 10.5px;
+            font-weight: 400;
+            color: #888;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .lt-detail-value {
+            font-size: 13px;
+            color: #1a1a1a;
+            font-weight: 400;
+            word-break: break-word;
+        }
+        .lt-detail-value-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .lt-detail-value-row .lt-detail-value {
+            min-width: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1 1 auto;
+        }
+        .lt-copy-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #7C4DBC;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+            flex-shrink: 0;
+        }
+        .lt-copy-btn:hover {
+            color: #5b3490;
+        }
+        .lt-status-entregado {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #DDF5DF;
+            color: #2E7D32;
+            font-style: italic;
+            font-size: 12.5px;
+            padding: 3px 10px;
+            border-radius: 4px;
+            align-self: flex-start;
+        }
+        .lt-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .lt-info-icon {
+            color: #7C4DBC;
+            display: inline-flex;
+            align-items: center;
+            line-height: 0;
+        }
+        .lt-carrier-code-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            color: #1a1a1a;
+            font-style: italic;
+            text-decoration: none;
+            font-size: 13px;
+            align-self: flex-start;
+        }
+        .lt-carrier-code-link:hover {
+            color: #7C4DBC;
+        }
+        .lt-card {
+            border: 1px solid #e5e5e5;
+            border-radius: 6px;
+            padding: 10px 12px;
+            background: #fff;
+        }
+        .lt-card-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 6px;
+        }
+        .lt-tag {
+            display: inline-flex;
+            align-items: center;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 3px 9px;
+            border-radius: 4px;
+            background: #7C4DBC;
+            color: #fff;
+            white-space: nowrap;
+        }
+        .lt-card-id {
+            font-size: 12px;
+            color: #1a1a1a;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            word-break: break-all;
+        }
+
     </style>
 </head>
 <body>
@@ -21873,9 +22335,17 @@ Bogotá, D.C., 110011, Colombia</div>
                             </div>
                         </div>
                     </div>
-                    <div class="widget-footer-source" id="cardsFooter">
-                        <div class="cards-footer-visual" aria-hidden="true">
-                            <img src="images/Cards.png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="cardsFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#cardsContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">Cards</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -22067,9 +22537,17 @@ Bogotá, D.C., 110011, Colombia</div>
                             </div>
                         </div>
                     </div>
-                    <div class="widget-footer-source" id="billsFooter">
-                        <div class="bills-footer-visual" aria-hidden="true">
-                            <img src="images/Bills.png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="billsFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#billsContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">Co-Operations</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -22117,9 +22595,123 @@ Bogotá, D.C., 110011, Colombia</div>
                             </div>
                         </div>
                     </div>
-                    <div class="widget-footer-source" id="quotasFooter">
-                        <div class="quotas-footer-visual" aria-hidden="true">
-                            <img src="images/Cards%20creation%20quotas.png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="quotasFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#quotasContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">Card Management &amp; Creation</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logistic Tracking Widget -->
+                <div class="widget" id="logisticTrackingWidget">
+                    <div class="widget-header" onclick="toggleWidget('logisticTrackingWidget')">
+                        <h2 class="widget-title">Logistic tracking</h2>
+                        <div class="header-right">
+                            <div class="menu-icon" onclick="event.stopPropagation(); toggleWidgetMenu(event);">⋮</div>
+                            <div class="collapse-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 5.25L7 8.75L10.5 5.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+                        </div>
+                    </div>
+                    <div class="widget-content" id="logisticTrackingContent">
+                        <button type="button" class="lt-package-row" id="ltPackageToggle" aria-expanded="false" aria-controls="ltDetailPanel" onclick="toggleLogisticDetail(this)">
+                            <div class="lt-package-title">
+                                <span class="lt-package-label">Package: 1 items</span>
+                                <span class="lt-status-pill">Logistics completed</span>
+                            </div>
+                            <span class="lt-chevron" aria-hidden="true">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                        </button>
+                        <div class="lt-detail" id="ltDetailPanel" hidden>
+                            <div class="lt-detail-field">
+                                <div class="lt-detail-label">PACKAGE ID</div>
+                                <div class="lt-detail-value-row">
+                                    <span class="lt-detail-value" title="d8a3e5f1-6b4c-4d2e-a7f9-1c5b3d8e6a2f">d8a3e5f1-6b4c-4d2e-a7f9-1c5b3d8e6a2f</span>
+                                    <button type="button" class="lt-copy-btn" title="Copy" aria-label="Copy package id" data-piv2-copy="d8a3e5f1-6b4c-4d2e-a7f9-1c5b3d8e6a2f" onclick="piv2Copy(this, event)">
+                                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M5 15V5a2 2 0 0 1 2-2h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="lt-detail-field">
+                                <div class="lt-detail-label">STATUS</div>
+                                <span class="lt-status-entregado">
+                                    <span>Entregado</span>
+                                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                            </div>
+                            <div class="lt-detail-grid">
+                                <div class="lt-detail-field">
+                                    <div class="lt-detail-label">PROCESSED AT</div>
+                                    <div class="lt-detail-value">02/05/2026, 9:14:22 AM</div>
+                                </div>
+                                <div class="lt-detail-field">
+                                    <div class="lt-detail-label">ESTIMATED TIME OF ARRIVAL</div>
+                                    <div class="lt-detail-value">02/11/2026</div>
+                                </div>
+                            </div>
+                            <div class="lt-detail-grid">
+                                <div class="lt-detail-field">
+                                    <div class="lt-detail-label">FACTORY</div>
+                                    <div class="lt-detail-value">-</div>
+                                </div>
+                                <div class="lt-detail-field">
+                                    <div class="lt-detail-label">CARRIER</div>
+                                    <div class="lt-detail-value">Servientrega</div>
+                                </div>
+                            </div>
+                            <div class="lt-detail-field">
+                                <div class="lt-detail-label">
+                                    <span>CARRIER CODE</span>
+                                    <span class="lt-info-icon" aria-hidden="true">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M12 16v-4M12 8h.01" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                                    </span>
+                                </div>
+                                <a class="lt-carrier-code-link" href="#" onclick="event.preventDefault();">
+                                    <span>48126573904</span>
+                                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </a>
+                            </div>
+                            <div class="lt-detail-field">
+                                <div class="lt-detail-label">RECIPIENT</div>
+                                <div class="lt-detail-value">Martha Lucía Gómez Ruiz</div>
+                            </div>
+                            <div class="lt-detail-field">
+                                <div class="lt-detail-label">DELIVERY ADDRESS</div>
+                                <div class="lt-detail-value">Calle 34Z Sur #99S-00<br>Bogotá, D.C., 110011, Colombia</div>
+                            </div>
+                            <div class="lt-detail-field">
+                                <div class="lt-detail-label">ITENS</div>
+                                <div class="lt-card">
+                                    <div class="lt-card-tags">
+                                        <span class="lt-tag">Tarjeta</span>
+                                        <span class="lt-tag">Gold</span>
+                                    </div>
+                                    <div class="lt-card-id">ID: e7b9c1d5-3a8f-4e6b-d2c4-8f1a5e3b7d9c</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-footer-source std-widget-footer" id="logisticTrackingFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#logisticTrackingContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">Logistics</span>
+                            <button type="button" class="std-footer-icon-btn" title="Bug" aria-label="Bug">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><ellipse cx="12" cy="13" rx="6.5" ry="3.5" stroke="currentColor" stroke-width="1.5"/><path d="M12 5v3M9.5 8h5M6.5 16l-2.5 2M17.5 16l2.5 2M5.5 12H3M18.5 12H21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="7" r="2.25" stroke="currentColor" stroke-width="1.5"/></svg>
+                            </button>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -22324,9 +22916,17 @@ Bogotá, D.C., 110011, Colombia</div>
                             </div>
                         </div>
                     </div>
-                    <div class="widget-footer-source" id="tokenizationsFooter">
-                        <div class="quotas-footer-visual" aria-hidden="true">
-                            <img src="images/Cards%20creation%20quotas.png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="tokenizationsFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#tokenizationsContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">Card Management &amp; Creation</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -22509,9 +23109,17 @@ Bogotá, D.C., 110011, Colombia</div>
                             <div style="text-align: center; color: #666; font-size: 11px;">Enter to submit</div>
                         </div>
                     </div>
-                    <div class="widget-footer-source" id="accountFooter">
-                        <div class="account-footer-visual" aria-hidden="true">
-                            <img src="images/Account1.png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="accountFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#accountContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">GCCP</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -22790,9 +23398,17 @@ Bogotá, D.C., 110011, Colombia</div>
                             </div>
                         </div>
                     </div>
-                    <div class="widget-footer-source" id="abuFooter">
-                        <div class="abu-footer-visual" aria-hidden="true">
-                            <img src="images/Automatic%20billing%20updater%20(abu).png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="abuFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#abuContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">Cards</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -22815,9 +23431,17 @@ Bogotá, D.C., 110011, Colombia</div>
                             </div>
                         </div>
                     </div>
-                    <div class="widget-footer-source" id="fraudCheckFooter">
-                        <div class="fraud-check-footer-visual" aria-hidden="true">
-                            <img src="images/Fraud%20Transactional.png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="fraudCheckFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#fraudCheckContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">Fraud Transactional</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -22883,9 +23507,17 @@ Bogotá, D.C., 110011, Colombia</div>
                             </li>
                         </ul>
                     </div>
-                    <div class="widget-footer-source" id="adjustmentsFooter">
-                        <div class="adjustments-footer-visual" aria-hidden="true">
-                            <img src="images/Manual%20Adjustments.png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="adjustmentsFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#adjustmentsContentSection', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">Manual Adjustments</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -23081,9 +23713,17 @@ Bogotá, D.C., 110011, Colombia</div>
                             </div>
                         </div>
                     </div>
-                    <div class="widget-footer-source" id="accountRequestFooter">
-                        <div class="account-request-footer-visual" aria-hidden="true">
-                            <img src="images/GrowthCO.png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="accountRequestFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#accountRequestContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">Growth CO</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -23556,9 +24196,17 @@ Bogotá, D.C., 110011, Colombia</div>
                             <!-- End Certificates Container -->
                         </div>
                     </div>
-                    <div class="widget-footer-source" id="certificatesFooter">
-                        <div class="certificates-footer-visual" aria-hidden="true">
-                            <img src="images/FraudAppAccess.png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="certificatesFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#certificatesContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">fraud-app-access</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -23585,9 +24233,17 @@ Bogotá, D.C., 110011, Colombia</div>
                             <button class="pin-close-btn">✕</button>
                         </div>
                     </div>
-                    <div class="widget-footer-source" id="pinFooter">
-                        <div class="pin-management-footer-visual" aria-hidden="true">
-                            <img src="images/Pin%20Management.png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="pinFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#pinSection', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">Fraud Challenge Platform</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -23614,9 +24270,17 @@ Bogotá, D.C., 110011, Colombia</div>
                             </div>
                         </div>
                     </div>
-                    <div class="widget-footer-source" id="appLoginFooter">
-                        <div class="app-login-footer-visual" aria-hidden="true">
-                            <img src="images/caputa.png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="appLoginFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#appLoginContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">fraud-app-access</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -23635,9 +24299,17 @@ Bogotá, D.C., 110011, Colombia</div>
                             There is no incident history reported to fraud team.
                         </div>
                     </div>
-                    <div class="widget-footer-source" id="csiFooter">
-                        <div class="csi-footer-visual" aria-hidden="true">
-                            <img src="images/CSI.png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="csiFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#csiContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">Fraud</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -23918,9 +24590,17 @@ Bogotá, D.C., 110011, Colombia</div>
                             <div class="challenge-auto-empty">No reported auto approve</div>
                         </div>
                     </div>
-                    <div class="widget-footer-source" id="challengePlatformFooter">
-                        <div class="challenge-platform-footer-visual" aria-hidden="true">
-                            <img src="images/challenge.png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="challengePlatformFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#challengeContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">Fraud Challenge Platform</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -23939,9 +24619,17 @@ Bogotá, D.C., 110011, Colombia</div>
                             No blocks or bypasses found
                         </div>
                     </div>
-                    <div class="widget-footer-source" id="blocksFooter">
-                        <div class="blocks-footer-visual" aria-hidden="true">
-                            <img src="images/defense.png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="blocksFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#blocksContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">Fraud Defense Intelligence</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -23959,6 +24647,17 @@ Bogotá, D.C., 110011, Colombia</div>
                         <button class="money-box-tab" onclick="switchMoneyBoxTab(event, 'inactive')">Inactive</button>
                         <button class="money-box-tab" onclick="switchMoneyBoxTab(event, 'transactions')">Transactions</button>
                         <button class="money-box-tab" onclick="switchMoneyBoxTab(event, 'totals')">Totals</button>
+                    </div>
+                    <div class="money-boxes-toolbar">
+                        <div class="money-box-view-label">View</div>
+                        <select class="money-boxes-toolbar-select filter-dropdown" aria-label="View">
+                            <option selected>All</option>
+                            <option>Personal</option>
+                            <option>Shared</option>
+                        </select>
+                        <div class="money-box-search-field">
+                            <input type="text" class="money-box-search mb-inactive-search-input" placeholder="Enter the name" autocomplete="off" />
+                        </div>
                     </div>
 
                     <!-- Active Tab Content -->
@@ -24004,8 +24703,18 @@ Bogotá, D.C., 110011, Colombia</div>
                         </div>
                     </div>
 
-                    <div class="money-boxes-footer-visual" aria-hidden="true">
-                        <img src="images/gba.png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="moneyBoxesFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#activeContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">gba-money-box-core-experience</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                        </div>
                     </div>
                 </div>
 
@@ -24068,8 +24777,18 @@ Bogotá, D.C., 110011, Colombia</div>
                                 </div>
                             </div>
                         </div>
-                        <div class="risk-events-footer-visual" aria-hidden="true">
-                            <img src="images/defenses.png" alt="" loading="eager" decoding="async">
+                    </div>
+                    <div class="widget-footer-source std-widget-footer" id="riskEventFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#riskEventContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">Defense Platform</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -24108,8 +24827,18 @@ Bogotá, D.C., 110011, Colombia</div>
                                 <div class="prometheus-id-value">a1b2c3d4-e5f6-47a8-b9c0-d1e2f3a4b5c6</div>
                             </div>
                         </div>
-                        <div class="prometheus-footer-visual" aria-hidden="true">
-                            <img src="images/prometheus.png" alt="" loading="eager" decoding="async">
+                    </div>
+                    <div class="widget-footer-source std-widget-footer" id="prometheusFooter">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#prometheusContent', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">Fraud Investigations - Core</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -25820,9 +26549,17 @@ Bogotá, D.C., 110011, Colombia</div>
                             </div>
                         </div>
                     </div>
-                    <div class="widget-footer-source" id="billsFooter">
-                        <div class="bills-footer-visual" aria-hidden="true">
-                            <img src="images/Bills.png" alt="" loading="lazy" decoding="async">
+                    <div class="widget-footer-source std-widget-footer" id="billsFooter2">
+                        <div class="std-footer-left">
+                            <button type="button" class="std-footer-icon-btn widget-reload-icon-btn" title="Refresh" aria-label="Refresh" onclick="widgetReload(this, '#billsContent2', event)">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 4v5h5M20 20v-5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.49 9A9 9 0 0 0 5.64 5.64L4 4m16 16l-1.64-1.64A9 9 0 0 1 3.51 15" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                            </button>
+                            <span class="std-footer-label">Co-Operations</span>
+                        </div>
+                        <div class="std-footer-right">
+                            <span class="std-footer-label">Rate this widget</span>
+                            <button type="button" class="std-footer-icon-btn" title="Like" aria-label="Thumbs up"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                            <button type="button" class="std-footer-icon-btn" title="Dislike" aria-label="Thumbs down"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3H10zM17 2h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
                         </div>
                     </div>
                 </div>
@@ -30506,13 +31243,31 @@ Un abrazo, equipo Nu. 💜</div>
                             <div class="bill-detail-value" id="billDetailRemainingBalance">$ 0,00</div>
                         </div>
                     </div>
-                    <div id="billDetailPurchaseToolbar" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 12px 0; border-top: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8; margin-top: 4px;">
-                        <div style="display: flex; align-items: center; gap: 14px;">
-                            <button type="button" style="display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid #ccc; padding: 6px 12px; border-radius: 6px; font-size: 12px; color: #333; cursor: pointer;">⚙️ More filters</button>
-                            <button type="button" style="background: none; border: none; font-size: 12px; color: #7C4DBC; text-decoration: underline; cursor: pointer;">Clear filters</button>
-                        </div>
-                        <button type="button" style="display: inline-flex; align-items: center; gap: 6px; background: #fff; border: 1px solid #ccc; padding: 6px 12px; border-radius: 6px; font-size: 12px; color: #333; cursor: pointer;">⧉ Copy purchases</button>
+                </div>
+                <!-- Filters Toolbar (visible for ALL bills) -->
+                <div id="billDetailPurchaseToolbar" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 12px 0; border-top: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8; margin: 8px 0 4px;">
+                    <div style="display: flex; align-items: center; gap: 14px;">
+                        <button type="button" id="billsMoreFiltersBtn" onclick="openBillsFilterByModal()" style="display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #ccc; padding: 7px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; color: #1F1F1F; cursor: pointer;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <line x1="3" y1="7" x2="11" y2="7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="17" y1="7" x2="21" y2="7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="3" y1="17" x2="7" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                <line x1="13" y1="17" x2="21" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                                <circle cx="14" cy="7" r="2.4" stroke="currentColor" stroke-width="1.8" fill="#fff"/>
+                                <circle cx="10" cy="17" r="2.4" stroke="currentColor" stroke-width="1.8" fill="#fff"/>
+                            </svg>
+                            <span>More filters</span>
+                            <span id="billsMoreFiltersCount" style="display: none; background: #7C4DBC; color: #fff; border-radius: 10px; padding: 1px 7px; font-size: 11px; font-weight: 700; min-width: 18px; text-align: center;">0</span>
+                        </button>
+                        <button type="button" id="billsClearFiltersBtn" onclick="clearBillsFilters()" style="background: none; border: none; font-size: 13px; color: #1F1F1F; cursor: pointer; padding: 0;">Clear filters</button>
                     </div>
+                    <button type="button" style="display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #ccc; padding: 7px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; color: #1F1F1F; cursor: pointer;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <rect x="9" y="9" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/>
+                            <path d="M5 15H4.5C3.67 15 3 14.33 3 13.5v-9C3 3.67 3.67 3 4.5 3h9C14.33 3 15 3.67 15 4.5V5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        </svg>
+                        <span>Copy purchases</span>
+                    </button>
                 </div>
                 
                 <!-- Row 2: Installments, Interests, Late Interests -->
@@ -30616,6 +31371,72 @@ Un abrazo, equipo Nu. 💜</div>
                 <div class="bill-detail-empty" id="billDetailEmpty">
                     No item found
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="billsFilterByModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="billsFilterByTitle" onclick="if (event.target === this) closeBillsFilterByModal()">
+        <div class="bfm-box" onclick="event.stopPropagation()">
+            <div class="bfm-header">
+                <span class="bfm-header-icon" aria-hidden="true">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="3" y1="7" x2="11" y2="7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="17" y1="7" x2="21" y2="7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="3" y1="17" x2="7" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        <line x1="13" y1="17" x2="21" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                        <circle cx="14" cy="7" r="2.4" stroke="currentColor" stroke-width="1.8" fill="#fff"/>
+                        <circle cx="10" cy="17" r="2.4" stroke="currentColor" stroke-width="1.8" fill="#fff"/>
+                    </svg>
+                </span>
+                <h2 id="billsFilterByTitle" class="bfm-title">Filter by...</h2>
+            </div>
+            <div class="bfm-body">
+                <div class="bfm-section" data-collapsed="false" data-section="tipo">
+                    <button type="button" class="bfm-section-head" onclick="toggleBillsFilterSection(this)" aria-expanded="true">
+                        <span class="bfm-section-arrow" aria-hidden="true"></span>
+                        <span>Tipo</span>
+                    </button>
+                    <div class="bfm-section-content">
+                        <label class="bfm-check-all">
+                            <input type="checkbox" class="bfm-cb bfm-check-all-cb" data-group="tipo" onchange="toggleBillsFilterCheckAll(this)">
+                            <span>Check all</span>
+                        </label>
+                        <div class="bfm-options">
+                            <label class="bfm-option"><input type="checkbox" class="bfm-cb bfm-tipo-cb" data-group="tipo" data-key="compras" onchange="onBillsFilterChange()"><span>Compras</span></label>
+                            <label class="bfm-option"><input type="checkbox" class="bfm-cb bfm-tipo-cb" data-group="tipo" data-key="financiamientos" onchange="onBillsFilterChange()"><span>Financiamientos</span></label>
+                            <label class="bfm-option"><input type="checkbox" class="bfm-cb bfm-tipo-cb" data-group="tipo" data-key="compras_plazo" onchange="onBillsFilterChange()"><span>Compras a plazo con tarjeta</span></label>
+                            <label class="bfm-option"><input type="checkbox" class="bfm-cb bfm-tipo-cb" data-group="tipo" data-key="pagos" onchange="onBillsFilterChange()"><span>Pagos</span></label>
+                            <label class="bfm-option"><input type="checkbox" class="bfm-cb bfm-tipo-cb" data-group="tipo" data-key="nupay" onchange="onBillsFilterChange()"><span>NuPay</span></label>
+                            <label class="bfm-option"><input type="checkbox" class="bfm-cb bfm-tipo-cb" data-group="tipo" data-key="recargas" onchange="onBillsFilterChange()"><span>Recargas de celular</span></label>
+                            <label class="bfm-option"><input type="checkbox" class="bfm-cb bfm-tipo-cb" data-group="tipo" data-key="compras_revertidas" onchange="onBillsFilterChange()"><span>Compras revertidas</span></label>
+                            <label class="bfm-option"><input type="checkbox" class="bfm-cb bfm-tipo-cb" data-group="tipo" data-key="suscripciones_nu" onchange="onBillsFilterChange()"><span>Suscripciones a servicios Nu</span></label>
+                            <label class="bfm-option"><input type="checkbox" class="bfm-cb bfm-tipo-cb" data-group="tipo" data-key="descuentos" onchange="onBillsFilterChange()"><span>Descuentos</span></label>
+                            <label class="bfm-option"><input type="checkbox" class="bfm-cb bfm-tipo-cb" data-group="tipo" data-key="otros" onchange="onBillsFilterChange()"><span>Otros</span></label>
+                            <label class="bfm-option"><input type="checkbox" class="bfm-cb bfm-tipo-cb" data-group="tipo" data-key="ajustes" onchange="onBillsFilterChange()"><span>Ajustes a crédito o débito</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="bfm-section" data-collapsed="false" data-section="categorias">
+                    <button type="button" class="bfm-section-head" onclick="toggleBillsFilterSection(this)" aria-expanded="true">
+                        <span class="bfm-section-arrow" aria-hidden="true"></span>
+                        <span>Categorías</span>
+                    </button>
+                    <div class="bfm-section-content">
+                        <label class="bfm-check-all">
+                            <input type="checkbox" class="bfm-cb bfm-check-all-cb" data-group="categorias" onchange="toggleBillsFilterCheckAll(this)">
+                            <span>Check all</span>
+                        </label>
+                        <div class="bfm-options">
+                            <label class="bfm-option"><input type="checkbox" class="bfm-cb bfm-cat-cb" data-group="categorias" data-key="gastos_totales" onchange="onBillsFilterChange()"><span>Gastos totales</span></label>
+                            <label class="bfm-option"><input type="checkbox" class="bfm-cb bfm-cat-cb" data-group="categorias" data-key="descuento" onchange="onBillsFilterChange()"><span>Descuento</span></label>
+                            <label class="bfm-option"><input type="checkbox" class="bfm-cb bfm-cat-cb" data-group="categorias" data-key="impuestos" onchange="onBillsFilterChange()"><span>Impuestos</span></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bfm-footer">
+                <button type="button" class="bfm-btn bfm-btn--apply" id="billsFilterApplyBtn" onclick="applyBillsFilters()" disabled>Apply filters</button>
+                <button type="button" class="bfm-btn bfm-btn--reset" onclick="resetBillsFiltersInModal()">Reset filters</button>
             </div>
         </div>
     </div>
@@ -36061,6 +36882,104 @@ Un abrazo, equipo Nu. 💜</div>
             buildMonthGrid();
         })();
 
+        var CARD_HISTORY_BY_PEPITO = 'By Nubank pepito.perez@nu.com.co';
+
+        var CARD_HISTORY = {
+            physicalDebit: [{ date: '01/08/24, 13:00', status: 'Available', by: 'By customer', kind: 'available' }],
+            virtualDebit: [{ date: '01/08/24, 13:00', status: 'Available', by: 'By customer', kind: 'available' }],
+            physicalCredit: [{ date: '01/08/24, 13:00', status: 'Available', by: 'By customer', kind: 'available' }],
+            virtualCredit: [{ date: '01/08/24, 13:00', status: 'Available', by: 'By customer', kind: 'available' }],
+            additionalCredit: [{ date: '01/10/24, 13:00', status: 'Available', by: 'By customer', kind: 'available' }]
+        };
+
+        var CARD_DETAILS_ID_TO_TYPE = {
+            physicalDetails: 'physicalDebit',
+            virtualDetails: 'virtualDebit',
+            physicalCreditDetails: 'physicalCredit',
+            virtualCreditDetails: 'virtualCredit',
+            additionalCreditDetails: 'additionalCredit'
+        };
+
+        function normalizeCardHistoryKey(cardType) {
+            if (!cardType) return null;
+            if (cardType === 'additional') return 'additionalCredit';
+            if (cardType === 'physical') return 'physicalDebit';
+            if (cardType === 'virtual') return 'virtualDebit';
+            return cardType;
+        }
+
+        function detectCardHistoryType(trigger) {
+            if (!trigger) return null;
+            var btn = trigger.closest ? trigger.closest('.card-history-btn') : null;
+            if (btn) {
+                var attr = btn.getAttribute('data-card-type');
+                if (attr) {
+                    return normalizeCardHistoryKey(attr);
+                }
+                var details = btn.closest('.card-details');
+                if (details && details.id && CARD_DETAILS_ID_TO_TYPE[details.id]) {
+                    return CARD_DETAILS_ID_TO_TYPE[details.id];
+                }
+            }
+            return null;
+        }
+
+        function formatCardHistoryDate(d) {
+            return pad2(d.getDate()) + '/' + pad2(d.getMonth() + 1) + '/' + String(d.getFullYear()).slice(-2) + ', ' + pad2(d.getHours()) + ':' + pad2(d.getMinutes());
+        }
+
+        function addCardHistoryEntry(cardType, status, kind) {
+            var key = normalizeCardHistoryKey(cardType);
+            if (!key || !CARD_HISTORY[key]) return;
+            CARD_HISTORY[key].unshift({
+                date: formatCardHistoryDate(new Date()),
+                status: status,
+                by: CARD_HISTORY_BY_PEPITO,
+                kind: kind
+            });
+        }
+
+        function renderCardHistoryTimeline(cardType) {
+            var timeline = document.getElementById('cardStatusHistoryTimeline');
+            if (!timeline) return;
+            var key = normalizeCardHistoryKey(cardType);
+            var items = (key && CARD_HISTORY[key]) ? CARD_HISTORY[key] : [];
+            timeline.innerHTML = '';
+            for (var i = 0; i < items.length; i++) {
+                var it = items[i];
+                var itemEl = document.createElement('div');
+                itemEl.className = 'card-status-history-item ' + (it.kind === 'available' ? 'card-status-history-item--available' : 'card-status-history-item--negative');
+                var rowEl = document.createElement('div');
+                rowEl.className = 'card-status-history-row';
+                var rowContent = document.createElement('div');
+                rowContent.className = 'card-status-history-row-content';
+                var dotEl = document.createElement('div');
+                dotEl.className = 'card-status-history-dot';
+                dotEl.setAttribute('aria-hidden', 'true');
+                var dateEl = document.createElement('div');
+                dateEl.className = 'card-status-history-date';
+                dateEl.textContent = it.date;
+                var statusEl = document.createElement('div');
+                statusEl.className = 'card-status-history-status';
+                statusEl.textContent = it.status;
+                var byEl = document.createElement('div');
+                byEl.className = 'card-status-history-by';
+                byEl.textContent = it.by;
+                rowContent.appendChild(dotEl);
+                rowContent.appendChild(dateEl);
+                rowContent.appendChild(statusEl);
+                rowContent.appendChild(byEl);
+                var chev = document.createElement('span');
+                chev.className = 'card-status-history-chevron';
+                chev.setAttribute('aria-hidden', 'true');
+                chev.textContent = '›';
+                rowEl.appendChild(rowContent);
+                rowEl.appendChild(chev);
+                itemEl.appendChild(rowEl);
+                timeline.appendChild(itemEl);
+            }
+        }
+
         function openCardStatusHistorySidebar(evt) {
             if (evt && typeof evt.stopPropagation === 'function') evt.stopPropagation();
             var overlay = document.getElementById('cardStatusHistoryOverlay');
@@ -38459,11 +39378,235 @@ Un abrazo, equipo Nu. 💜</div>
         
         function openBillDetail(index) {
             currentBillIndex = index;
+            resetBillsFiltersForNewBill();
             const modal = document.getElementById('billDetailModal');
             modal.style.display = 'flex';
             updateBillDetail();
         }
-        
+
+        var billsAppliedFilters = { tipo: [], categorias: [] };
+
+        function openBillsFilterByModal() {
+            var modal = document.getElementById('billsFilterByModal');
+            if (!modal) return;
+            syncBillsFilterModalFromApplied();
+            modal.classList.add('active');
+            updateBillsFilterUI();
+        }
+
+        function closeBillsFilterByModal() {
+            var modal = document.getElementById('billsFilterByModal');
+            if (!modal) return;
+            modal.classList.remove('active');
+        }
+
+        function toggleBillsFilterSection(btn) {
+            var section = btn.closest('.bfm-section');
+            if (!section) return;
+            var collapsed = section.getAttribute('data-collapsed') === 'true';
+            section.setAttribute('data-collapsed', collapsed ? 'false' : 'true');
+            btn.setAttribute('aria-expanded', collapsed ? 'true' : 'false');
+        }
+
+        function toggleBillsFilterCheckAll(cb) {
+            var group = cb.getAttribute('data-group');
+            var modal = document.getElementById('billsFilterByModal');
+            if (!modal) return;
+            var items = modal.querySelectorAll('.bfm-options input[type="checkbox"][data-group="' + group + '"]');
+            for (var i = 0; i < items.length; i++) {
+                items[i].checked = cb.checked;
+            }
+            onBillsFilterChange();
+        }
+
+        function syncBillsFilterCheckAllStates() {
+            var modal = document.getElementById('billsFilterByModal');
+            if (!modal) return;
+            ['tipo', 'categorias'].forEach(function (group) {
+                var items = modal.querySelectorAll('.bfm-options input[type="checkbox"][data-group="' + group + '"]');
+                if (!items.length) return;
+                var total = items.length;
+                var checked = 0;
+                for (var i = 0; i < items.length; i++) {
+                    if (items[i].checked) checked++;
+                }
+                var checkAll = modal.querySelector('.bfm-check-all-cb[data-group="' + group + '"]');
+                if (checkAll) {
+                    checkAll.checked = (checked === total);
+                    checkAll.indeterminate = (checked > 0 && checked < total);
+                }
+            });
+        }
+
+        function getBillsFilterSelectedCount() {
+            var modal = document.getElementById('billsFilterByModal');
+            if (!modal) return 0;
+            return modal.querySelectorAll('.bfm-options input[type="checkbox"]:checked').length;
+        }
+
+        function getBillsFilterSelectedKeys(group) {
+            var modal = document.getElementById('billsFilterByModal');
+            if (!modal) return [];
+            var sel = modal.querySelectorAll('.bfm-options input[type="checkbox"][data-group="' + group + '"]:checked');
+            return Array.prototype.map.call(sel, function (el) { return el.getAttribute('data-key'); });
+        }
+
+        function onBillsFilterChange() {
+            syncBillsFilterCheckAllStates();
+            var applyBtn = document.getElementById('billsFilterApplyBtn');
+            if (applyBtn) {
+                applyBtn.disabled = (getBillsFilterSelectedCount() === 0);
+            }
+        }
+
+        function updateBillsFilterUI() {
+            syncBillsFilterCheckAllStates();
+            var applyBtn = document.getElementById('billsFilterApplyBtn');
+            if (applyBtn) {
+                applyBtn.disabled = (getBillsFilterSelectedCount() === 0);
+            }
+        }
+
+        function syncBillsFilterModalFromApplied() {
+            var modal = document.getElementById('billsFilterByModal');
+            if (!modal) return;
+            var items = modal.querySelectorAll('.bfm-options input[type="checkbox"]');
+            for (var i = 0; i < items.length; i++) {
+                var grp = items[i].getAttribute('data-group');
+                var k = items[i].getAttribute('data-key');
+                var arr = billsAppliedFilters[grp] || [];
+                items[i].checked = arr.indexOf(k) !== -1;
+            }
+            syncBillsFilterCheckAllStates();
+        }
+
+        function refreshBillsAppliedFiltersBadge() {
+            var badge = document.getElementById('billsMoreFiltersCount');
+            if (!badge) return;
+            var count = (billsAppliedFilters.tipo.length || 0) + (billsAppliedFilters.categorias.length || 0);
+            if (count > 0) {
+                badge.textContent = String(count);
+                badge.style.display = 'inline-flex';
+            } else {
+                badge.textContent = '0';
+                badge.style.display = 'none';
+            }
+        }
+
+        function inferBillTxnTipoKey(t) {
+            if (!t) return 'compras';
+            if (t.tipoKey) return t.tipoKey;
+            var d = (t.description || '').toLowerCase();
+            if (t.isPayment === true) return 'pagos';
+            if (/payments?\s+received|pagos?\s+recibidos?/.test(d)) return 'pagos';
+            if (/revers|devoluci|refund/.test(d)) return 'compras_revertidas';
+            if (/nupay/.test(d)) return 'nupay';
+            if (/recarga/.test(d)) return 'recargas';
+            if (/suscripci|nu\+|nu plus|netflix|spotify|payu\*netflix/.test(d)) return 'suscripciones_nu';
+            if (/ajuste|adjustment/.test(d)) return 'ajustes';
+            if (/financiam|financing/.test(d)) return 'financiamientos';
+            if (/descuento/.test(d)) return 'descuentos';
+            var m = d.match(/(\d+)\/(\d+)/);
+            if (m) {
+                var den = parseInt(m[2], 10);
+                if (den > 1) return 'compras_plazo';
+            }
+            return 'compras';
+        }
+
+        function inferBillTxnCategoriaKey(t) {
+            if (!t) return 'gastos_totales';
+            if (t.categoriaKey) return t.categoriaKey;
+            var d = (t.description || '').toLowerCase();
+            if (/iva|impuesto|tax/.test(d)) return 'impuestos';
+            if (/descuento|discount/.test(d)) return 'descuento';
+            return 'gastos_totales';
+        }
+
+        function tagBillTransactionRow(rowEl, transaction) {
+            if (!rowEl || !transaction) return;
+            var tipo = inferBillTxnTipoKey(transaction);
+            var cat = inferBillTxnCategoriaKey(transaction);
+            rowEl.setAttribute('data-bfm-tipo', tipo);
+            rowEl.setAttribute('data-bfm-cat', cat);
+            rowEl.setAttribute('data-bfm-row', '1');
+        }
+
+        function applyBillsFiltersToDom() {
+            var container = document.getElementById('billDetailTransactions');
+            if (!container) return;
+            var rows = container.querySelectorAll('[data-bfm-row]');
+            var tipoSel = billsAppliedFilters.tipo || [];
+            var catSel = billsAppliedFilters.categorias || [];
+            var hasTipo = tipoSel.length > 0;
+            var hasCat = catSel.length > 0;
+            var visible = 0;
+            for (var i = 0; i < rows.length; i++) {
+                var row = rows[i];
+                var t = row.getAttribute('data-bfm-tipo') || '';
+                var c = row.getAttribute('data-bfm-cat') || '';
+                var keepTipo = !hasTipo || tipoSel.indexOf(t) !== -1;
+                var keepCat = !hasCat || catSel.indexOf(c) !== -1;
+                if (keepTipo && keepCat) {
+                    row.style.display = 'flex';
+                    visible++;
+                } else {
+                    row.style.display = 'none';
+                }
+            }
+            var emptyEl = document.getElementById('billDetailEmpty');
+            if (emptyEl) {
+                if (rows.length > 0 && visible === 0 && (hasTipo || hasCat)) {
+                    emptyEl.style.display = 'block';
+                    emptyEl.textContent = 'No matches for the selected filters';
+                } else if (rows.length > 0) {
+                    emptyEl.style.display = 'none';
+                    emptyEl.textContent = 'No item found';
+                }
+            }
+            refreshBillsAppliedFiltersBadge();
+        }
+
+        function applyBillsFilters() {
+            if (getBillsFilterSelectedCount() === 0) return;
+            billsAppliedFilters.tipo = getBillsFilterSelectedKeys('tipo');
+            billsAppliedFilters.categorias = getBillsFilterSelectedKeys('categorias');
+            applyBillsFiltersToDom();
+            closeBillsFilterByModal();
+        }
+
+        function resetBillsFiltersInModal() {
+            var modal = document.getElementById('billsFilterByModal');
+            if (!modal) return;
+            var items = modal.querySelectorAll('input[type="checkbox"]');
+            for (var i = 0; i < items.length; i++) {
+                items[i].checked = false;
+                items[i].indeterminate = false;
+            }
+            onBillsFilterChange();
+        }
+
+        function clearBillsFilters() {
+            billsAppliedFilters = { tipo: [], categorias: [] };
+            resetBillsFiltersInModal();
+            applyBillsFiltersToDom();
+        }
+
+        function resetBillsFiltersForNewBill() {
+            billsAppliedFilters = { tipo: [], categorias: [] };
+            var modal = document.getElementById('billsFilterByModal');
+            if (modal) {
+                var items = modal.querySelectorAll('input[type="checkbox"]');
+                for (var i = 0; i < items.length; i++) {
+                    items[i].checked = false;
+                    items[i].indeterminate = false;
+                }
+                var applyBtn = document.getElementById('billsFilterApplyBtn');
+                if (applyBtn) applyBtn.disabled = true;
+            }
+            refreshBillsAppliedFiltersBadge();
+        }
+
         function closeBillDetail() {
             const modal = document.getElementById('billDetailModal');
             modal.style.display = 'none';
@@ -39766,9 +40909,11 @@ Un abrazo, equipo Nu. 💜</div>
                         rightSide.appendChild(amountSpan);
                         transactionRow.appendChild(leftSide);
                         transactionRow.appendChild(rightSide);
+                        tagBillTransactionRow(transactionRow, transaction);
                         transactionsDivEne.appendChild(transactionRow);
                     });
                     document.getElementById('billDetailEmpty').style.display = 'none';
+                    applyBillsFiltersToDom();
                 } else {
                     transactionsDivEne.style.display = 'none';
                     document.getElementById('billDetailEmpty').style.display = 'block';
@@ -39883,9 +41028,11 @@ Un abrazo, equipo Nu. 💜</div>
                         
                         transactionRow.appendChild(leftSide);
                         transactionRow.appendChild(rightSide);
+                        tagBillTransactionRow(transactionRow, transaction);
                         transactionsDiv.appendChild(transactionRow);
                     });
                     document.getElementById('billDetailEmpty').style.display = 'none';
+                    applyBillsFiltersToDom();
                 } else {
                     transactionsDiv.style.display = 'none';
                     document.getElementById('billDetailEmpty').style.display = 'block';
@@ -39940,9 +41087,11 @@ Un abrazo, equipo Nu. 💜</div>
                         rightSide.appendChild(amountSpan);
                         transactionRow.appendChild(leftSide);
                         transactionRow.appendChild(rightSide);
+                        tagBillTransactionRow(transactionRow, transaction);
                         transactionsDivBasic.appendChild(transactionRow);
                     });
                     document.getElementById('billDetailEmpty').style.display = 'none';
+                    applyBillsFiltersToDom();
                 } else {
                     transactionsDivBasic.style.display = 'none';
                     document.getElementById('billDetailEmpty').style.display = 'block';
@@ -40207,6 +41356,15 @@ Un abrazo, equipo Nu. 💜</div>
                 dragging = false;
             });
         })();
+
+        function toggleLogisticDetail(btn) {
+            if (!btn) return;
+            var panel = document.getElementById('ltDetailPanel');
+            if (!panel) return;
+            var expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+            panel.hidden = expanded;
+        }
 
         function piv2SwitchTab(btn) {
             if (!btn) return;
