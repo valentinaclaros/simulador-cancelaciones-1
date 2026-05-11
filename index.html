@@ -20599,6 +20599,7 @@
     </style>
 </head>
 <body>
+    <div id="pageWatermark" style="position: fixed; top: 8px; right: 12px; font-size: 11px; font-weight: 500; color: rgba(0, 0, 0, 0.55); letter-spacing: 0.3px; white-space: nowrap; user-select: none; pointer-events: none; z-index: 99999;">Created by: @valentina.claros</div>
     <div class="page-wrapper">
     <div class="page-main">
     <div class="banner">
@@ -20617,12 +20618,9 @@
                     <span>ID Number: CC -98765433</span>
                 </div>
             </div>
-            <div class="header-buttons" style="display: flex; flex-direction: column; align-items: center; gap: 6px;">
-                <span class="header-watermark" style="font-size: 11px; font-weight: 500; color: rgba(255, 255, 255, 0.65); letter-spacing: 0.3px; user-select: none; text-align: center; line-height: 1.3;">Created by:<br>@valentina.claros</span>
-                <div style="display: flex; gap: 10px;">
-                    <button type="button" class="header-action-btn" onclick="location.reload()" title="Recargar la página (como F5)">Reload Deck</button>
-                    <button type="button" class="header-action-btn" title="Notification History" onclick="openNotificationsPanel()">Notification History</button>
-                </div>
+            <div class="header-buttons">
+                <button type="button" class="header-action-btn" onclick="location.reload()" title="Recargar la página (como F5)">Reload Deck</button>
+                <button type="button" class="header-action-btn" title="Notification History" onclick="openNotificationsPanel()">Notification History</button>
             </div>
         </div>
 
